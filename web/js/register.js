@@ -7,19 +7,22 @@ var truepwd = "mcwjs";
 
 var CodeVal = 0;
 Code();
+
 function Code() {
-    if(canGetCookie == 1){
+    if (canGetCookie == 1) {
         createCode("AdminCode");
         var AdminCode = getCookieValue("AdminCode");
         showCheck(AdminCode);
-    }else{
+    } else {
         showCheck(createCode(""));
     }
 }
+
 function showCheck(a) {
     CodeVal = a;
 
 }
+
 $(document).keypress(function (e) {
     // 回车键事件
     if (e.which == 13) {
@@ -35,10 +38,10 @@ $('input[name="pwd"]').focus(function () {
     $(this).attr('type', 'password');
 });
 $('input[type="text"]').focus(function () {
-    $(this).prev().animate({ 'opacity': '1' }, 200);
+    $(this).prev().animate({'opacity': '1'}, 200);
 });
 $('input[type="text"],input[type="password"]').blur(function () {
-    $(this).prev().animate({ 'opacity': '.5' }, 200);
+    $(this).prev().animate({'opacity': '.5'}, 200);
 });
 $('input[name="login"],input[name="pwd"]').keyup(function () {
     var Len = $(this).val().length;
@@ -67,108 +70,82 @@ layui.use('layer', function () {
         var pwd = $('input[name="pwd"]').val();
         var code = $('input[name="code"]').val();
         var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
-        if (login == '') {
+        if (login === '') {
             ErroAlert('请输入您的账号');
-        } else if (pwd == '') {
+        } else if (pwd === '') {
             ErroAlert('请输入密码');
-        } else if (code == '' || !reg.test(code)) {
+        } else if (code === '' || !reg.test(code)) {
             ErroAlert('输入正确邮箱号');
         } else {
             //认证中..
-            fullscreen();
             $('.login').addClass('test'); //倾斜特效
             setTimeout(function () {
                 $('.login').addClass('testtwo'); //平移特效
             }, 300);
             setTimeout(function () {
-                $('.authent').show().animate({ right: -320 }, {
+                $('.authent').show().animate({right: -320}, {
                     easing: 'easeOutQuint',
                     duration: 600,
                     queue: false
                 });
-                $('.authent').animate({ opacity: 1 }, {
+                $('.authent').animate({opacity: 1}, {
                     duration: 200,
                     queue: false
                 }).addClass('visible');
             }, 500);
 
             //登陆
-            var JsonData = { login: login, pwd: pwd, code: code };
+            // var JsonData = { login: login, pwd: pwd, code: code };
             //此处做为ajax内部判断
             var url = "";
-            if(true){
-                url = "/MovieManager/RegisterAction";
-                $.ajax({
-                    type: "post",
-                    url: url,
-                    data: JsonData,
-                    dataType: 'json',
-                    async: 'false',
+            url = "/UserRegister?email=" + code + "&Uname=" + login + "&Upswd=" + pwd;
+            $.ajax({
+                type: "GET",
+                url: url,
+                contentType: "charset=utf-8",
+                error: function (error) {
+                    layer.msg("连接服务器失败！");
+                },
+                success: function (data) {
 
-                    error: function (error) {
-                        console.log("失败");
-                        console.log(error);
-                    },
-                    success: function(data) {
-
-                        setTimeout(function ()
-                        {
-                            $('.authent').show().animate({ right: 90 },
-                                {
-                                    easing: 'easeOutQuint',
-                                    duration: 600,
-                                    queue: false
-                                }
-                            );
-                            $('.authent').animate({ opacity: 0 },
-                                {
-                                    duration: 200,
-                                    queue: false
-                                }
-                            ).addClass('visible');
-                            $('.login').removeClass('testtwo'); //平移特效
-                        }, 2000);
-                        setTimeout(function ()
-                        {
-                            $('.authent').hide();
-                            $('.login').removeClass('test');
-
-                            if (data.responseText.Status == 'ok')
+                    setTimeout(function () {
+                        $('.authent').show().animate({right: 90},
                             {
-                                //登录成功
-                                $('.login div').fadeOut(100);
-                                $('.success').fadeIn(1000);
-                                $('.success').html(data.responseText.Text);
-                                //跳转操作
-                                setTimeout(function(){
-                                    window.location.href = "/MovieManager/index.jsp";
-                                },1000);
-
-                            } else {
-                                AjaxErro(data);
+                                easing: 'easeOutQuint',
+                                duration: 600,
+                                queue: false
                             }
-                        }, 2400);
-                    }
-                });
-            }else{
-                layer.msg("注册失败！");
-                setTimeout(function(){
-                    window.location.href = "/MovieManager/register.jsp" ;
-                },1000);
-            }
+                        );
+                        $('.authent').animate({opacity: 0},
+                            {
+                                duration: 200,
+                                queue: false
+                            }
+                        );
+                        $('.login').removeClass('testtwo'); //平移特效
+                    }, 2000);
+                    setTimeout(function () {
+                        $('.authent').hide();
+                        $('.login').removeClass('test');
+
+                        if (data === "successful") {
+                            console.log("success");
+                            debugger;
+                            //登录成功
+                            layer.msg("注册成功！");
+                            //跳转操作
+                            setTimeout(function () {
+                                debugger;
+                                window.location.href = "../pages/Login.html";
+                            }, 1000);
+
+                        } else {
+                            layer.msg("注册失败！");
+                        }
+                    }, 2400);
+                }
+            });
 
         }
     })
 });
-var fullscreen = function () {
-    elem = document.body;
-    if (elem.webkitRequestFullScreen) {
-        elem.webkitRequestFullScreen();
-    } else if (elem.mozRequestFullScreen) {
-        elem.mozRequestFullScreen();
-    } else if (elem.requestFullScreen) {
-        elem.requestFullscreen();
-    } else {
-        //浏览器不支持全屏API或已被禁用
-    }
-};

@@ -5,11 +5,13 @@ import database.movieSystem.MovieSystemDB;
 import database.userUtil.User;
 import frontEnd.utils.ServletUtils;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebServlet(name = "UserRegister", urlPatterns = {"/UserRegister"})
 public class UserRegister extends HttpServlet {
 
     @Override
