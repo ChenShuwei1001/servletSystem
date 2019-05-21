@@ -4,15 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <listener>
-        <listener-class>listener.DBinit</listener-class>
-    </listener>
-
-
     <!--fankehu2 add begin-->
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>movie-list.html</welcome-file>
     </welcome-file-list>
+
 
     <servlet>
         <servlet-name>Admin_addmovie</servlet-name>
@@ -20,7 +16,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Admin_addmovie</servlet-name>
-        <url-pattern>/servletSystem/admin_fkh/Admin_addmovie</url-pattern>
+        <url-pattern>/servletSystem_war_exploded/Admin_addmovie</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -32,5 +28,12 @@
         <url-pattern>/servletSystem/admin_fkh/Admin_LoadData_movie_list</url-pattern>
     </servlet-mapping>
     <!--fankehu2 add end-->
+
+
+
+    <listener>
+        <listener-class>listener.DBinit</listener-class>
+    </listener>
+
 </web-app>
 
