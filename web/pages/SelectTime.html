@@ -53,7 +53,7 @@
                 <div class="cinema-brief-container">
                     <h3 class="name text-ellipsis">${sessionScope.SingleCinema.name}</h3>
                     <div class="address text-ellipsis">${sessionScope.SingleCinema.address}</div>
-                    <div class="telphone">电话：<p></p></div>
+                    <div class="telphone">电话：<span></span></div>
 
                     <div class="features-group">
                         <div class="group-title">影院服务</div>
@@ -90,16 +90,12 @@
 
                     <div class="movie-desc">
                         <div>
-                            <span class="key">时长 :</span>
-                            <span class="value">${sessionScope.SingleMovie.duration}</span>
+                            <span class="key" id="my-movie-time">时长 :</span>
+                            <span class="value" id="my-movie-time-value">${sessionScope.SingleMovie.duration}</span>
                         </div>
                         <div>
-                            <span class="key">类型 :</span>
-                            <span class="value"> ${sessionScope.SingleMovie.type} </span>
-                        </div>
-                        <div>
-                            <span class="key">导演 :</span>
-                            <span class="value"> ${sessionScope.SingleMovie.staring}</span>
+                            <span class="key" id="my-movie-type">类型 :</span>
+                            <span class="value" id="my-movie-type-value"> ${sessionScope.SingleMovie.type} </span>
                         </div>
                     </div>
                 </div>
@@ -107,11 +103,6 @@
 
                 <div class="show-date">
                     <span>观影时间 :</span>
-                    <c:forEach items="${sessionScope.movieSession}" var="u" varStatus="status">
-
-                        <span class="date-item active" data-index="${status.index}">${u.date}</span>
-
-                    </c:forEach>
 
                 </div>
 
@@ -127,12 +118,8 @@
                         </tr>
                         </thead>
 
-                        <tbody>
-                        <c:forEach items="${sessionScope.movieSession}" var="u" varStatus="status">
-
-
-                            <tr class="">
-
+                        <tbody id="my-time-body">
+                            <tr class="my-time-row">
                                 <td>
                                     <span class="begin-time">${u.time}</span>
                                     <br>
@@ -151,8 +138,6 @@
                                     <a href="/MovieManager/buySeat.jsp?sessionId=${u.session_Id}&hallId=${u.hall_Id}" class="buy-btn normal" data-tip="" data-act="show-click" data-bid="b_gvh3l8gg" data-val="{movie_id: 1208282, cinema_id:7349}">选座购票</a>
                                 </td>
                             </tr>
-
-                        </c:forEach>
                         </tbody>
                     </table>
                 </div>

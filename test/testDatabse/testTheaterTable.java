@@ -12,7 +12,7 @@ public class testTheaterTable {
         TheaterTable theaterTable = MovieSystemDB.getTheaterTable();
 
         Theater theater = new Theater("1", "龙湖IMAX",
-                "电子科技大学旁边的龙湖时代天街");
+                "电子科技大学旁边的龙湖时代天街","13076076023");
         theaterTable.insert(theater);
         theater.setTno("2");
         theaterTable.insert(theater);
