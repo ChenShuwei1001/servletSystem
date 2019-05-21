@@ -25,6 +25,8 @@ public class SceneTable implements TableOperation {
                 "Mno Char(12),"+
                 "Tno Char(12),"+
                 "Tbrand Char(20),"+
+                "beginTime Time, " +
+                "endTime Time, " +
                 "language Char(12),"+
                 "roomType Char(20)," +
                 "roomName Char(20)," +
@@ -59,7 +61,7 @@ public class SceneTable implements TableOperation {
      */
     @Override
     public boolean insert(Object o) {
-        String sql = "Insert Into " + sceneTableName + " Values(?,?, ?, ?, ?, ?,?,?,?,?,?)";
+        String sql = "Insert Into " + sceneTableName + " Values(?,?, ?, ?,?,?, ?, ?,?,?,?,?,?)";
         PreparedStatement pstmt = null;
         Scene scene = (Scene) o;
         try {
@@ -69,13 +71,15 @@ public class SceneTable implements TableOperation {
             pstmt.setString(2, scene.getMno());
             pstmt.setString(3, scene.getTno());
             pstmt.setString(4, scene.getTbrand());
-            pstmt.setString(5, scene.getLanguage());
-            pstmt.setString(6, scene.getRoomType());
-            pstmt.setString(7, scene.getRoomName());
-            pstmt.setString(8, scene.getLocation());
-            pstmt.setString(9, scene.getSdate());
-            pstmt.setString(10, scene.getSeat());
-            pstmt.setDouble(11, scene.getPrice());
+            pstmt.setString(5,scene.getBeginTime());
+            pstmt.setString(6,scene.getEndTime());
+            pstmt.setString(7, scene.getLanguage());
+            pstmt.setString(8, scene.getRoomType());
+            pstmt.setString(9, scene.getRoomName());
+            pstmt.setString(10, scene.getLocation());
+            pstmt.setString(11, scene.getSdate());
+            pstmt.setString(12, scene.getSeat());
+            pstmt.setDouble(13, scene.getPrice());
 
             if (pstmt.executeUpdate() > 0) {
                 SimpleLogger.logger.info("insert " + scene.showSelf()
@@ -125,6 +129,8 @@ public class SceneTable implements TableOperation {
                 scene.setMno(rs.getString("Mno"));
                 scene.setTno(rs.getString("Tno"));
                 scene.setTbrand(rs.getString("Tbrand"));
+                scene.setBeginTime(rs.getString("beginTime"));
+                scene.setEndTime(rs.getString("endTime"));
                 scene.setLanguage(rs.getString("language"));
                 scene.setRoomType(rs.getString("roomType"));
                 scene.setRoomName(rs.getString("roomName"));
@@ -183,6 +189,18 @@ public class SceneTable implements TableOperation {
                 sql += ", ";
             }
             sql += (" Tbrand = '" + scene.getTbrand()+ "'");
+        }
+        if (scene.getBeginTime() != null) {
+            if (0 < count++) {
+                sql += ", ";
+            }
+            sql += (" beginTime = '" + scene.getBeginTime()+ "'");
+        }
+        if (scene.getEndTime() != null) {
+            if (0 < count++) {
+                sql += ", ";
+            }
+            sql += (" endTime = '" + scene.getEndTime()+ "'");
         }
         if (scene.getLanguage() != null) {
             if (0 < count++) {
