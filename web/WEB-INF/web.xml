@@ -9,5 +9,28 @@
     </listener>
 
 
+    <!--fankehu2 add begin-->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>Admin_addmovie</servlet-name>
+        <servlet-class>admin_fkh.Admin_addmovie</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin_addmovie</servlet-name>
+        <url-pattern>/servletSystem/admin_fkh/Admin_addmovie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Admin_LoadData_movie_list</servlet-name>
+        <servlet-class>admin_fkh.Admin_LoadData_movie_list</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin_LoadData_movie_list</servlet-name>
+        <url-pattern>/servletSystem/admin_fkh/Admin_LoadData_movie_list</url-pattern>
+    </servlet-mapping>
+    <!--fankehu2 add end-->
 </web-app>
 
