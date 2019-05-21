@@ -2,33 +2,13 @@ var canGetCookie = 0;//是否支持存储Cookie 0 不支持 1 支持
 var ajaxmockjax = 0;//是否启用虚拟Ajax的请求响 0 不启用  1 启用
 //默认账号密码
 
-var truelogin = "kbcxy";
-var truepwd = "mcwjs";
-
-var CodeVal = 0;
-Code();
-
-function Code() {
-    if (canGetCookie == 1) {
-        createCode("AdminCode");
-        var AdminCode = getCookieValue("AdminCode");
-        showCheck(AdminCode);
-    } else {
-        showCheck(createCode(""));
-    }
-}
-
-function showCheck(a) {
-    CodeVal = a;
-
-}
-
 $(document).keypress(function (e) {
     // 回车键事件
     if (e.which == 13) {
         $('input[type="button"]').click();
     }
 });
+
 //粒子背景特效
 $('body').particleground({
     dotColor: '#E8DFE8',

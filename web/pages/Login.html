@@ -26,7 +26,7 @@
             </div>
             <form method="post" id="form">
 
-                <input name="login" placeholder='用户名' maxlength="16" type='text' autocomplete="off" value=""/>
+                <input name="login" placeholder='邮箱' maxlength="30" type='text' autocomplete="off" value=""/>
                 <div class='validation'>
                     <img alt="" src='../img/tick.png'>
                 </div>
@@ -39,17 +39,7 @@
                         <img alt="" src='../img/tick.png'>
                     </div>
                 </div>
-                <div class='login_fields__password'>
-                    <div class='icon'>
-                        <img alt="" src='../img/key.png'>
-                    </div>
-                    <input name="code" placeholder='验证码' maxlength="4" type='text' name="ValidateNum"
-                           autocomplete="off">
-                    <div class='validation' style="opacity: 1; right: -5px;top: -3px;">
-                        <canvas class="J_codeimg" id="myCanvas" onclick="Code();">对不起，您的浏览器不支持canvas，请下载最新版浏览器!</canvas>
-                    </div>
-                </div>
-                <div class='login_fields__submit'>
+                <div class='login_fields__submit' style="margin-top: 15px">
                     <input type='button' value='登录'>
                     <a href="./Register.html" id="reg">注册</a>
 

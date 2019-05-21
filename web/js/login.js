@@ -1,33 +1,3 @@
-var canGetCookie = 0;//是否支持存储Cookie 0 不支持 1 支持
-var ajaxmockjax = 0;//是否启用虚拟Ajax的请求响 0 不启用  1 启用
-//默认账号密码
-
-var truelogin = "kbcxy";
-var truepwd = "mcwjs";
-
-var CodeVal = 0;
-Code();
-
-function Code() {
-    if (canGetCookie === 1) {
-        createCode("AdminCode");
-        var AdminCode = getCookieValue("AdminCode");
-        showCheck(AdminCode);
-    } else {
-        showCheck(createCode(""));
-    }
-}
-
-function showCheck(a) {
-    CodeVal = a;
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    ctx.clearRect(0, 0, 1000, 1000);
-    ctx.font = "80px 'Hiragino Sans GB'";
-    ctx.fillStyle = "#E8DFE8";
-    ctx.fillText(a, 0, 100);
-}
-
 $(document).keypress(function (e) {
     // 回车键事件
     if (e.which === 13) {
@@ -73,13 +43,10 @@ layui.use('layer', function () {
     $('input[type="button"]').click(function () {
         var login = $('input[name="login"]').val();
         var pwd = $('input[name="pwd"]').val();
-        var code = $('input[name="code"]').val();
         if (login === '') {
             ErroAlert('请输入您的账号');
         } else if (pwd === '') {
             ErroAlert('请输入密码');
-        } else if (code === '' || code.length != 4) {
-            ErroAlert('输入验证码');
         } else {
             //认证中..
             $('.login').addClass('test'); //倾斜特效
@@ -103,7 +70,7 @@ layui.use('layer', function () {
             //此处做为ajax内部判断
             var url = "";
             {
-                url = "/MovieManager/LoginAction?";
+                url = "/Login?email="+login+"&Upswd="+pwd;
                 $.ajax({
                     type: "GET",
                     url: url,
@@ -133,18 +100,22 @@ layui.use('layer', function () {
                             $('.authent').hide();
                             $('.login').removeClass('test');
 
-                            if (data.responseText.Status == 'ok') {
+                            var res = data.split(":");
+
+                            if (res[0]=== 'successful') {
                                 //登录成功
-                                $('.login div').fadeOut(100);
-                                $('.success').fadeIn(1000);
-                                $('.success').html(data.responseText.Text);
+                                layer.msg("登录成功！");
+                                //写入数据到local
+                                localStorage.setItem('name',res[2]);
+                                localStorage.setItem('email',res[1]);
+                                localStorage.setItem('isLogin','true');
                                 //跳转操作
                                 setTimeout(function () {
                                     window.location.href = "../pages/HomePage.html";
                                 }, 1000);
 
                             } else {
-                                layer.msg("注册失败！");
+                                layer.msg("登录失败！");
                             }
                         }, 2400);
                     }
