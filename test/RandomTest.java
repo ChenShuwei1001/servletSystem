@@ -17,6 +17,6 @@ public class RandomTest {
 
     public static void main(String[] args) throws InterruptedException {
         Test test = new Test();
-        System.out.println(JSON.toJSONString(test));
+        System.out.println(JSON.toJSONString("jhahahadf"));
     }
 }
