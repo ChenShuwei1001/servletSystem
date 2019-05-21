@@ -20,7 +20,7 @@ public class Login extends HttpServlet {
         User user = MovieSystemDB.getUserTable().select(email);
         String response = "fail";
         if(null != user){
-            if(user.getUpswd() == Upswd){
+            if(user.getUpswd().equals(Upswd)){
                 response = "successful";
             }
         }
