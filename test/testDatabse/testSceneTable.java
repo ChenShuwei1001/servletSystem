@@ -10,6 +10,7 @@ public class testSceneTable {
         SceneTable sceneTable = MovieSystemDB.getSceneTable();
         //test insert
         Scene scene = new Scene("1", "1", "1", "IMAX",
+                "10:40:00", "13:00:00",
                 "英语", "3D厅","2号厅",
                 "郫都区",
                 "2018-04-24", "1,2,3", 50);
