@@ -42,6 +42,9 @@
         <!--<button class="layui-btn" onclick="x_admin_show('添加电影','test.html',600,400)"><i class="layui-icon"></i>添加电影</button>-->
         <span class="x-right" style="line-height:40px">共有数据：88 条</span>
       </xblock>
+
+
+
       <table id="movie-list-show" class="layui-table">
         <thead>
           <tr>
@@ -51,7 +54,9 @@
             <th>Mno电影编号</th>
             <th>Mname电影名字</th>
 
-            <!--<th>英文名</th>-->
+            <th>英文名</th>
+            <th>时长</th>
+            <th>票房</th>
 
             <th>Mpo电影封面</th>
             <th>MoD电影导演</th>
@@ -61,22 +66,40 @@
             <th>MoC电影地区</th>
             <th>MoDA上映时间</th>
             <th>MoSC电影评分</th>
+            <th>评分人数</th>
+            <th>电影简介</th>
+              <!--movieNo,//编号-->
+              <!--movieName,-->
+              <!--"The avengers 4", //英文名-->
+              <!--"03:02:22",//时长-->
+              <!--14.69,//票房-->
+              <!--moviePath, //海报-->
+              <!--movieoD, //导演-->
+              <!--movieoA,//演员-->
+              <!--movieoT, //类型-->
+              <!--movieoL,-->
+              <!--movieoC,//上映地区-->
+              <!--movieoDA, //上映时间-->
+              <!--Double.valueOf(movieoSC),//评分-->
+              <!--145897,//评分人数-->
+              <!--"这是电影简介"-->
+              <!--);-->
         </thead>
         <tbody>
           <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
-            <td>1</td>
-            <td>hgeuh4</td>
-            <td>正常</td>
-            <td>130</td>
-            <td>2131</td>
-            <td>2131</td>
-            <td>2131</td>
-            <td>2131</td>
-            <td>2131</td>
-            <td>2131</td>
+            <!--<td>-->
+              <!--<div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>-->
+            <!--</td>-->
+            <!--<td>1</td>-->
+            <!--<td>hgeuh4</td>-->
+            <!--<td>正常</td>-->
+            <!--<td>130</td>-->
+            <!--<td>2131</td>-->
+            <!--<td>2131</td>-->
+            <!--<td>2131</td>-->
+            <!--<td>2131</td>-->
+            <!--<td>2131</td>-->
+            <!--<td>2131</td>-->
           </tr>
 
         </tbody>
@@ -95,6 +118,44 @@
     </div>
     <script type="text/javascript">
      $(document).ready(function () {
+        debugger;
+       $.ajax({
+         type: "Get",
+         url: "servletSystem_war_exploded/Admin_LoadData_movie_list",
+         async: false,
+         dataType: "json",
+         success: function (data,txtstuts) {
+
+           debugger;
+
+           //静态测试
+           for(var i=0;i<data.length;i++){
+             var movieListTable=document.getElementById("movie-list-show");
+             var rowLength=movieListTable.rows.length;
+             var tableRow=movieListTable.insertRow(rowLength);
+             tableRow.innerHTML=
+                     "<td>" +
+                     "<div class=\"layui-unselect layui-form-checkbox\" lay-skin=\"primary\" data-id='2'><i class=\"layui-icon\">&#xe605;</i></div>" +
+                     "</td>" +
+                     "<td>"+data[i]["Mno"]+"</td>" +
+                     "<td>"+data[i]["Mname"]+"</td>" +
+                     "<td>"+data[i]["MEnglishName"]+"</td>" +
+                     "<td>"+data[i]["Mduration"]+"</td>" +
+                     "<td>"+data[i]["MboxOffice"]+"</td>" +
+                     "<td><img src=\"http://localhost:8080/servletSystem_war_exploded/image/abc.jpg\" alt=\"\">"+data[i]["MposterPath"]+"</td>" +
+                     "<td>"+data[i]["Mdirector"]+"</td>" +
+                     "<td>"+data[i]["actor"]+"</td>" +
+                     "<td>"+data[i]["Mtype"]+"</td>" +
+                     "<td>"+data[i]["Mlanguage"]+"</td>" +
+                     "<td>"+data[i]["Mlocation"]+"</td>" +
+                     "<td>"+data[i]["Mdate"]+"</td>" +
+                     "<td>"+data[i]["Mrating"]+"</td>" +
+                     "<td>"+data[i]["MscoreNumber"]+"</td>" +
+                     "<td>"+data[i]["Mintroduction"]+"</td>";
+           }
+         }
+       })
+
 
        //初始页面加载数据
        // $.ajax({
@@ -109,26 +170,26 @@
        //     alert("加载失败");
        //   }
        // });
-       //静态测试
-       for(var i=0;i<5;i++){
-         var movieListTable=document.getElementById("movie-list-show");
-         var rowLength=movieListTable.rows.length;
-         var tableRow=movieListTable.insertRow(rowLength);
-         tableRow.innerHTML=
-                 "<td>" +
-                 "<div class=\"layui-unselect layui-form-checkbox\" lay-skin=\"primary\" data-id='2'><i class=\"layui-icon\">&#xe605;</i></div>" +
-                 "</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>" +
-                 "<td>"+"1"+"</td>";
-       }
+       // //静态测试
+       // for(var i=0;i<5;i++){
+       //   var movieListTable=document.getElementById("movie-list-show");
+       //   var rowLength=movieListTable.rows.length;
+       //   var tableRow=movieListTable.insertRow(rowLength);
+       //   tableRow.innerHTML=
+       //           "<td>" +
+       //           "<div class=\"layui-unselect layui-form-checkbox\" lay-skin=\"primary\" data-id='2'><i class=\"layui-icon\">&#xe605;</i></div>" +
+       //           "</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>" +
+       //           "<td>"+"1"+"</td>";
+       // }
 
 
 

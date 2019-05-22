@@ -28,12 +28,12 @@ public class Admin_LoadData_movie_list extends HttpServlet {
         return testFile.exists();
     }
 
-    public LinkedBlockingQueue<MovieToFrontEnd> getTop10(){
-        LinkedBlockingQueue<MovieToFrontEnd> top10 = new LinkedBlockingQueue<>();
+    public LinkedBlockingQueue<Movie> getTop10(){
+        LinkedBlockingQueue<Movie> top10 = new LinkedBlockingQueue<>();
 
 
         //这里修改为 选择所有数据
-        String sql = "Select Mno From " + MovieTable.movieTableName + " Order By Mrating limit 10";
+        String sql = "Select * From " + MovieTable.movieTableName ;
         Statement stmt = null;
         ResultSet rs = null;
         try{
@@ -48,8 +48,8 @@ public class Admin_LoadData_movie_list extends HttpServlet {
                 if(!fileExist(movie.getMposterPath())){
                     movie.setMposterPath(defaultImagePath);
                 }
-                MovieToFrontEnd movieToFrontEnd = new MovieToFrontEnd(movie);
-                top10.put(movieToFrontEnd);
+//                Movie movie = new Movie(movie);
+                top10.put(movie);
             }
         } catch (SQLException | InterruptedException e) {
             e.printStackTrace();
