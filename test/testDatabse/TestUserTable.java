@@ -10,8 +10,8 @@ public class TestUserTable {
         UserTable userTable = MovieSystemDB.getUserTable();
 
         //test insert
-        User user = new User("1", "Kelvin", "wdnmd", "13568994472",
-                99999999, "null");
+        User user = new User("test@qq.com", "test", "test", "test",
+                0, "null");
         userTable.insert(user);
 
         //test select

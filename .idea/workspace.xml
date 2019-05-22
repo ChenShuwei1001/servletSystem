@@ -7,24 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5603cab-46ee-4f12-aff1-156eee844ea5" name="Default Changelist" comment="完成登录注册界面">
-      <change afterPath="$PROJECT_DIR$/web/css/maoyan-common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/maoyan-profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/maoyan_order_detail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/maoyan_owl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/maoyan_stat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/pages/MyOrder.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/pages/MyOrderDetail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/myorder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/servletSystem_war_exploded/WEB-INF/classes/database/orderUtil/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/servletSystem_war_exploded/WEB-INF/classes/database/orderUtil/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/servletSystem_war_exploded/WEB-INF/classes/database/orderUtil/OrderTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/servletSystem_war_exploded/WEB-INF/classes/database/orderUtil/OrderTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/servletSystem_war_exploded/WEB-INF/classes/database/userUtil/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/servletSystem_war_exploded/WEB-INF/classes/database/userUtil/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/servletSystem/database/orderUtil/OrderTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/servletSystem/database/orderUtil/OrderTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/servletSystem/database/userUtil/UserTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/servletSystem/database/userUtil/UserTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/InsertSeatOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/InsertSeatOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/UsedSeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/UsedSeat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testDatabse/TestSceneTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testDatabse/TestSceneTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/SelectSeat.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/SelectSeat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/SelectTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/SelectTime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pages/SelectSeat.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/SelectSeat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/servletSystem/database/userUtil/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/servletSystem/database/userUtil/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/orderUtil/OrderTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/orderUtil/OrderTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/GetOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/GetOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testDatabse/TestUserTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testDatabse/TestUserTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pages/MyOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/MyOrder.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,68 +101,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pages/Login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="70" column="74" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="74" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovieDetail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pages/MovieDetail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectTime.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pages/SelectTime.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/orderUtil/OrderTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/orderUtil/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InsertSeatOrder.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/frontEnd/InsertSeatOrder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="18" column="50" lean-forward="true" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MyOrder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pages/MyOrder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="105" column="6" lean-forward="true" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+            <state relative-caret-position="548">
+              <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -177,29 +113,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyOrderDetail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pages/MyOrderDetail.html">
+      <file leaf-file-name="myorder.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/js/myorder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#2;n#body#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="154">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maoyan_owl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/maoyan_owl.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="maoyan_order_detail.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/maoyan_order_detail.css">
+      <file leaf-file-name="buyticket.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/buyticket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret column="825" selection-start-column="825" selection-end-column="825" />
+            <state relative-caret-position="120">
+              <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -211,21 +138,14 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>banner</find>
-      <find>ver</find>
-      <find>top</find>
-      <find>main-</find>
-      <find>panel-con</find>
-      <find>avatar-shadow</find>
-      <find>main</find>
       <find>tab-title-container</find>
       <find>首页</find>
       <find>updateBtn</find>
@@ -249,6 +169,13 @@
       <find>header</find>
       <find>.info-content .orders-container, .info-content .profile-container</find>
       <find>footer</find>
+      <find>delete</find>
+      <find>order-date</find>
+      <find>order-id</find>
+      <find>order-box</find>
+      <find>poster</find>
+      <find>movie-name</find>
+      <find>show-time</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -267,10 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/css/homepage.css" />
-        <option value="$PROJECT_DIR$/web/css/MovieDetail.css" />
-        <option value="$PROJECT_DIR$/web/css/movieDetail.css" />
-        <option value="$PROJECT_DIR$/test/testTableOperation/testMovieTable.java" />
         <option value="$PROJECT_DIR$/web/js/movieDetail.js" />
         <option value="$PROJECT_DIR$/web/css/myButTicket.css" />
         <option value="$PROJECT_DIR$/src/frontEnd/HomePage.java" />
@@ -316,8 +239,12 @@
         <option value="$PROJECT_DIR$/web/css/maoyan_profile.css" />
         <option value="$PROJECT_DIR$/web/css/maoyan-common.css" />
         <option value="$PROJECT_DIR$/web/css/maoyan-profile.css" />
-        <option value="$PROJECT_DIR$/web/pages/MyOrder.html" />
         <option value="$PROJECT_DIR$/web/pages/MyOrderDetail.html" />
+        <option value="$PROJECT_DIR$/src/database/orderUtil/OrderTable.java" />
+        <option value="$PROJECT_DIR$/test/testDatabse/TestUserTable.java" />
+        <option value="$PROJECT_DIR$/src/frontEnd/GetOrders.java" />
+        <option value="$PROJECT_DIR$/web/pages/MyOrder.html" />
+        <option value="$PROJECT_DIR$/web/js/myorder.js" />
       </list>
     </option>
   </component>
@@ -348,6 +275,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,19 +292,6 @@
               <item name="servletSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="servletSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="orderUtil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servletSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servletSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -388,7 +303,7 @@
               <item name="servletSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="servletSystem" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="servletSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -409,7 +324,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -418,7 +332,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="DBclose&#9;PSI&#9;JAVA://database.system.MovieSystemDB#DBclose" />
+    <property name="SearchEverywhereHistoryKey" value="userta&#9;FILE&#9;file://F:/Hotwind/Codes/KeShe/servletSystem/src/database/userUtil/UserTable.java&#10;DBclose&#9;PSI&#9;JAVA://database.system.MovieSystemDB#DBclose" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557830810860" />
@@ -451,139 +365,6 @@
       <recent name="F:\Hotwind\Codes\KeShe\servletSystem\web" />
     </key>
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/servletSystem/database/orderUtil/Order.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/servletSystem/database/orderUtil/OrderTable.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/servletSystem/database/userUtil/UserTable.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/test/servletSystem/RandomTest.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/orderUtil/Order.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/orderUtil/OrderTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/userUtil/UserTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/frontEnd/Login.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/RandomTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/testSystemDB.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/frontEnd/InsertSeatOrder.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/frontEnd/UsedSeat.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/TestMovieTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/TestOrderTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/TestSceneTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/TestTheaterTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/TestUserTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testFrontEnd/TestInsertOrder.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testFrontEnd/TestSeatUsed.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/testMovieTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/testOrderTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/testSceneTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/testTheaterTable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/testDatabse/testUserTable.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
-  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -597,16 +378,22 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.testServlet">
-    <configuration name="RandomTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RandomTest" />
-      <module name="servletSystem" />
-    </configuration>
     <configuration name="TestJson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestJson" />
       <module name="servletSystem" />
     </configuration>
     <configuration name="TestSceneTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="testDatabse.TestSceneTable" />
+      <module name="servletSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testDatabse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="TestUserTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testDatabse.TestUserTable" />
       <module name="servletSystem" />
       <extension name="coverage">
         <pattern>
@@ -708,19 +495,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.testServlet" />
-      <item itemvalue="Application.RandomTest" />
       <item itemvalue="Application.TestJson" />
       <item itemvalue="Application.testMovieTable" />
       <item itemvalue="Application.testSystemDB" />
       <item itemvalue="Application.TestSceneTable" />
+      <item itemvalue="Application.TestUserTable" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestUserTable" />
         <item itemvalue="Application.testSystemDB" />
         <item itemvalue="Application.TestSceneTable" />
         <item itemvalue="Application.testMovieTable" />
         <item itemvalue="Application.TestJson" />
-        <item itemvalue="Application.RandomTest" />
       </list>
     </recent_temporary>
   </component>
@@ -770,6 +557,7 @@
       <workItem from="1558463920751" duration="2757000" />
       <workItem from="1558492249638" duration="10327000" />
       <workItem from="1558505020241" duration="673000" />
+      <workItem from="1558531767518" duration="5388000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1558427268155</created>
@@ -803,7 +591,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164765000" />
+    <option name="totallyTimeSpent" value="170153000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -823,54 +611,33 @@
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32673267" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3281471" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013405" side_tool="true" weight="0.5586987" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.3903819" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.6251768" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49865952" weight="0.5586987" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49932975" weight="0.5586987" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.19943424" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.24128686" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.24463807" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3281471" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3946252" />
       <window_info id="Favorites" order="5" sideWeight="0.5007072" side_tool="true" weight="0.2935657" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.3903819" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.24128686" />
-      <window_info id="Favorites" order="5" sideWeight="0.5007072" side_tool="true" weight="0.2935657" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3297587" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3281471" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6350778" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49932975" weight="0.5586987" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2503536" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.37853107" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.6251768" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32673267" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3297587" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -953,7 +720,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/database/orderUtil/OrderTable.java</url>
-          <line>55</line>
+          <line>56</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
@@ -969,8 +736,14 @@
           <properties />
           <option name="timeStamp" value="91" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/database/userUtil/UserTable.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="92" />
+      <option name="time" value="95" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -981,6 +754,7 @@
         <watch expression="JSON.toJSONString(scenes)" language="JAVA" />
         <watch expression="user.getUpswd() == Upswd" />
         <watch expression="user.getUpswd()" />
+        <watch expression="pstmt.toString()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -990,6 +764,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>pstmt.toString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>JSON.toJSONString(scenes)</expression-string>
         <language-id>JAVA</language-id>
@@ -1003,25 +782,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/js/stopExecutionOnTimeout.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="70" column="32" lean-forward="true" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/register_background.jpg" />
-    <entry file="file://$PROJECT_DIR$/web/js/jquery-ui.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/register.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/Starry5.jpg" />
-    <entry file="file://$PROJECT_DIR$/web/img/Starry3.jpg" />
     <entry file="file://$PROJECT_DIR$/web/css/demo.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1067,16 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
           <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontEnd/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="24" selection-start-line="24" selection-end-line="24" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1088,25 +838,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/modernizr-custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/frontEnd/TheaterDetail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/testDatabse/testSystemDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1121,16 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="756" column="29" selection-start-line="756" selection-start-column="29" selection-end-line="756" selection-end-column="29" />
-          <folding>
-            <element signature="n#div#5;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/buyticket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1860">
-          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1162,29 +889,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/movieSystem/MovieSystemDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-          <folding>
-            <element signature="e#1852#1853#0" expanded="true" />
-            <element signature="e#1884#1885#0" expanded="true" />
-            <element signature="e#2127#2128#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/frontEnd/utils/ImageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/SelectSeat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1195,21 +903,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/userUtil/UserTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-512">
-          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/HomePage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="90" column="22" lean-forward="true" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1239,7 +936,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/Login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
+        <state relative-caret-position="1400">
           <caret line="70" column="74" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="74" />
           <folding>
             <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1247,48 +944,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/MovieDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/SelectTime.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/maoyan_common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="290" column="26" lean-forward="true" selection-start-line="290" selection-start-column="26" selection-end-line="290" selection-end-column="26" />
-          <folding>
-            <element signature="e#3906#10593#1" expanded="true" />
-            <element signature="e#11545#11996#2" expanded="true" />
-            <element signature="e#15352#15799#2" expanded="true" />
-            <element signature="e#17156#25595#2" expanded="true" />
-            <element signature="e#26070#27249#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/maoyan_profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="578" lean-forward="true" selection-end-line="1064" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/orderUtil/OrderTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/maoyan_common.css" />
+    <entry file="file://$PROJECT_DIR$/web/css/maoyan_profile.css" />
     <entry file="file://$PROJECT_DIR$/web/css/maoyan-profile.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -1300,16 +957,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding>
-            <element signature="e#17691#18138#2" expanded="true" />
-            <element signature="e#19891#28330#2" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/maoyan_order_detail.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state>
           <caret column="825" selection-start-column="825" selection-end-column="825" />
         </state>
       </provider>
@@ -1320,38 +973,154 @@
     <entry file="file://$PROJECT_DIR$/web/js/maoyan_stat.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/MyOrder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="105" column="6" lean-forward="true" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/MyOrderDetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#2;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/SelectTime.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/SelectSeat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/sql/PreparedStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testDatabse/TestOrderTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testDatabse/testSystemDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/MovieDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/userUtil/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontEnd/UserRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testDatabse/TestUserTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/orderUtil/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        <state relative-caret-position="200">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/userUtil/UserTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="209" column="22" selection-start-line="209" selection-start-column="22" selection-end-line="209" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/orderUtil/OrderTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="56" column="52" lean-forward="true" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/frontEnd/InsertSeatOrder.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/movieSystem/MovieSystemDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="e#1852#1853#0" expanded="true" />
+            <element signature="e#1884#1885#0" expanded="true" />
+            <element signature="e#2127#2128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontEnd/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="18" column="50" lean-forward="true" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <caret line="24" column="59" lean-forward="true" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontEnd/GetOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="67" column="41" lean-forward="true" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/buyticket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/MyOrder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/myorder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
         </state>
       </provider>
     </entry>

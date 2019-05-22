@@ -23,7 +23,7 @@ public class OrderTable implements TableOperation {
     public void createTable() {
         String sql = "Create Table " + tableName + "(" +
                 "Ono Char(50) Primary Key," +
-                "Odate DateTime," +
+                "OdateTime DateTime," +
                 "Sno Char(12),"+
                 "Uno Char(50), " +
                 "seat Char(50), " +
@@ -153,7 +153,7 @@ public class OrderTable implements TableOperation {
             if (0 < count++) {
                 sql += ", ";
             }
-            sql += (" Odate = '" + order.getOdateTime() + "'");
+            sql += (" OdateTime = '" + order.getOdateTime() + "'");
         }
         if (order.getSno() != null) {
             if (0 < count++) {
