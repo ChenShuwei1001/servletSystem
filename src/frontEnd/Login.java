@@ -5,11 +5,13 @@ import database.movieSystem.MovieSystemDB;
 import database.userUtil.User;
 import frontEnd.utils.ServletUtils;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login extends HttpServlet {
 
     @Override
@@ -24,7 +26,11 @@ public class Login extends HttpServlet {
                 response = "successful";
             }
         }
-
+        if(response.equals("successful")){
+            response += (":" + user.getUno() + ":" + user.getUname());
+        }else {
+            response += ":0";
+        }
         ServletUtils.resJsonString(resp, JSON.toJSONString(response));
     }
 

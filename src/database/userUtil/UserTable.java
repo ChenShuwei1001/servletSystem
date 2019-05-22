@@ -3,7 +3,6 @@ package database.userUtil;
 import database.DBOpration;
 import database.baseInterfaces.TableOperation;
 import database.movieSystem.MovieSystemDB;
-import database.movieUtil.MovieTable;
 import logger.SimpleLogger;
 
 import java.sql.PreparedStatement;
@@ -24,8 +23,7 @@ public class UserTable implements TableOperation {
                 "Uname Char(20)," +
                 "Upswd Char(20)," +
                 "Utel Char(20)," +
-                "Ubalance Double," +
-                "Uorder Char(200))" +
+                "Ubalance Double)" +
                 " Default Charset = utf8";
         DBOpration.executeSql(sql);
     }
@@ -46,18 +44,17 @@ public class UserTable implements TableOperation {
      */
     @Override
     public boolean insert(Object o) {
-        String sql = "Insert Into " + userTableName + " Values(?, ?, ?, ?, ?, ?)";
+        String sql = "Insert Into " + userTableName + " Values(?, ?, ?, ?, ?)";
         PreparedStatement pstmt = null;
         User user = (User)o;
         try {
             pstmt = MovieSystemDB.getConn().prepareStatement(sql);
 
             pstmt.setString(1, user.getUno());
-            pstmt.setString(2, user.getUnama());
+            pstmt.setString(2, user.getUname());
             pstmt.setString(3, user.getUpswd());
             pstmt.setString(4, user.getUtel());
             pstmt.setDouble(5, user.getUbalance());
-            pstmt.setString(6, user.getUorder());
 
             if (pstmt.executeUpdate() > 0) {
                 SimpleLogger.logger.info("insert " + user.showSelf()
@@ -103,11 +100,10 @@ public class UserTable implements TableOperation {
                 User user = new User();
 
                 user.setUno(rs.getString("Uno"));
-                user.setUnama(rs.getString("Uname"));
+                user.setUname(rs.getString("Uname"));
                 user.setUpswd(rs.getString("Upswd"));
                 user.setUtel(rs.getString("Utel"));
                 user.setUbalance(rs.getDouble("Ubalance"));
-                user.setUorder(rs.getString("Uorder"));
                 SimpleLogger.logger.info("select " + user.showSelf() +
                         " from table '" + userTableName + "'");
                 return user;
@@ -143,11 +139,11 @@ public class UserTable implements TableOperation {
         User user = (User)o;
         //make sql statement
         //----------------------------------
-        if (user.getUnama() != null) {
+        if (user.getUname() != null) {
             if (0 < count++) {
                 sql += ", ";
             }
-            sql += (" Uname = '" + user.getUnama() + "'");
+            sql += (" Uname = '" + user.getUname() + "'");
         }
         if (user.getUpswd() != null) {
             if (0 < count++) {
@@ -166,12 +162,6 @@ public class UserTable implements TableOperation {
                 sql += ", ";
             }
             sql += (" Ubalance = '" + user.getUbalance() + "'");
-        }
-        if (user.getUorder() != null) {
-            if (0 < count++) {
-                sql += ", ";
-            }
-            sql += (" Uorder = '" + user.getUorder() + "'");
         }
         sql += " Where Uno = '" + user.getUno() + "'";
         //----------------------------------
