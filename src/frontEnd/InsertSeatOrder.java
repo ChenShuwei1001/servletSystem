@@ -100,6 +100,7 @@ public class InsertSeatOrder extends HttpServlet {
                 response = "successful";
                 MovieSystemDB.getConn().commit();
             }
+            MovieSystemDB.getConn().setAutoCommit(true);
         } catch (SQLException e) {
             e.printStackTrace();
         }
