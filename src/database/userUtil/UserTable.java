@@ -23,8 +23,7 @@ public class UserTable implements TableOperation {
                 "Uname Char(20)," +
                 "Upswd Char(20)," +
                 "Utel Char(20)," +
-                "Ubalance Double," +
-                "Uorder Char(200))" +
+                "Ubalance Double)" +
                 " Default Charset = utf8";
         DBOpration.executeSql(sql);
     }
@@ -45,7 +44,7 @@ public class UserTable implements TableOperation {
      */
     @Override
     public boolean insert(Object o) {
-        String sql = "Insert Into " + userTableName + " Values(?, ?, ?, ?, ?, ?)";
+        String sql = "Insert Into " + userTableName + " Values(?, ?, ?, ?, ?)";
         PreparedStatement pstmt = null;
         User user = (User)o;
         try {
@@ -56,7 +55,6 @@ public class UserTable implements TableOperation {
             pstmt.setString(3, user.getUpswd());
             pstmt.setString(4, user.getUtel());
             pstmt.setDouble(5, user.getUbalance());
-            pstmt.setString(6, user.getUorder());
 
             if (pstmt.executeUpdate() > 0) {
                 SimpleLogger.logger.info("insert " + user.showSelf()
@@ -106,7 +104,6 @@ public class UserTable implements TableOperation {
                 user.setUpswd(rs.getString("Upswd"));
                 user.setUtel(rs.getString("Utel"));
                 user.setUbalance(rs.getDouble("Ubalance"));
-                user.setUorder(rs.getString("Uorder"));
                 SimpleLogger.logger.info("select " + user.showSelf() +
                         " from table '" + userTableName + "'");
                 return user;
@@ -165,12 +162,6 @@ public class UserTable implements TableOperation {
                 sql += ", ";
             }
             sql += (" Ubalance = '" + user.getUbalance() + "'");
-        }
-        if (user.getUorder() != null) {
-            if (0 < count++) {
-                sql += ", ";
-            }
-            sql += (" Uorder = '" + user.getUorder() + "'");
         }
         sql += " Where Uno = '" + user.getUno() + "'";
         //----------------------------------

@@ -12,6 +12,8 @@ public class OrderToFrontEnd {
     private String Ono;
     @JSONField(name = "Mname")
     private String Mname;
+    @JSONField(name = "MposterPath")
+    private String MposterPath;
     @JSONField(name = "Tname")
     private String Tname;
     @JSONField(name = "roomName")
@@ -30,6 +32,7 @@ public class OrderToFrontEnd {
         this.Odate = dateTime[0];
         this.Ono = order.getOno();
         this.Mname = movie.getMname();
+        this.MposterPath = movie.getMposterPath();
         this.Tname = theater.getTname();
         this.roomName = scene.getRoomName();
         this.seat = order.getSeat();
@@ -108,5 +111,13 @@ public class OrderToFrontEnd {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getMposterPath() {
+        return MposterPath;
+    }
+
+    public void setMposterPath(String mposterPath) {
+        MposterPath = mposterPath;
     }
 }
