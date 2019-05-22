@@ -10,6 +10,7 @@ import database.movieUtil.MovieToFrontEnd;
 import frontEnd.utils.ServletUtils;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,10 +20,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.LinkedBlockingQueue;
-
+@WebServlet(name="Admin_LoadData_movie_list", urlPatterns = {"/Admin_LoadData_movie_list"})
 public class Admin_LoadData_movie_list extends HttpServlet {
 
-    private static final String defaultImagePath = "C://users/swchen/Desktop/test.png";
+    private static final String defaultImagePath = "F:\\myCode\\411movieSystemImage\\test1111.jpg";
     private boolean fileExist(String filePath){
         File testFile = new File(filePath);
         return testFile.exists();

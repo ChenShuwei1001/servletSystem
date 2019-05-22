@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
 
-@WebServlet("/Admin_addmovie")
 @MultipartConfig(location = "F://")//测试路径
 public class Admin_addmovie extends HttpServlet {
     @Override
@@ -23,6 +22,7 @@ public class Admin_addmovie extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
 //        super.doPost(req, resp);
 
 //        Should import:
@@ -32,9 +32,9 @@ public class Admin_addmovie extends HttpServlet {
 
         //设置海报路径
 //        String Path="F:\\myCode\\411movieSystemImage\\";
-        String PathStemp = this.getClass().getClassLoader().getResource(".").getPath();
+//        String PathStemp = this.getClass().getClassLoader().getResource(".").getPath();
         //        F:\myCode\411movieSystem\servletSystem\web\image
-        String Path=PathStemp.substring(1,PathStemp.indexOf("out"))+"web/image/";
+        String Path="F:/myCode/411movieSystemImage/";
 
 
         Part result=  req.getPart("addMpo");
@@ -45,10 +45,7 @@ public class Admin_addmovie extends HttpServlet {
         String Mduration=req.getParameter("addMTL");
         String MboxOffice=req.getParameter("addMcash");
 
-//        String moviePath=Path+movieNo+movieName+".jpg";
-        String moviePath=movieNo+movieName+".jpg";//
-        //存储的还是绝对路径，admin使用时 自动切割
-        String moviePath2=Path+moviePath;
+        String moviePath=Path+movieNo+movieName+".jpg";
 
         String movieoD=req.getParameter("addMoD");
         String movieoA=req.getParameter("addMoA");
@@ -69,7 +66,7 @@ public class Admin_addmovie extends HttpServlet {
                 movieEngName, //英文名
                 Mduration,//时长
                 Double.valueOf(MboxOffice),//票房
-                moviePath2, //海报  执行语句 alter table movie modify column mposterpath varchar(100);
+                moviePath, //海报  执行语句 alter table movie modify column mposterpath varchar(100);
                 movieoD, //导演
                 movieoA,//演员
                 movieoT, //类型
@@ -84,7 +81,7 @@ public class Admin_addmovie extends HttpServlet {
 
 
         if(result.getContentType().contains("image")){
-            result.write(Path+moviePath);
+            result.write(moviePath);
         }else{
 
         }

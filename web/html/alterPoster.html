@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="img-box">
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <!--<td><img id="newimage" alt="" src="../image/0000.jpg"/></td>-->
+                <td><img class="abc" id="newimage" alt="" src=""/></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <form id="alterPoster" action="/Admin_alterPoster" method="POST" enctype="multipart/form-data">
+
+            编号：<input class="altermovieNo" type="text" name="altermovieMNo"  ><br>
+            海报：<input class="altermoviePo" type="text" name="altermovieMPo12345" >
+        <br>
+        选择新海报：<input type="file" name="alterPosterNew"><br>
+        <input type="submit" value="提交"><!--onclick="submitData()-->
+        <input type="button" value="ajax提交" id="ajaxsub">
+    </form>
+    <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    var path=localStorage.getItem("movieParam");
+    var no=localStorage.getItem("movieNO");
+    debugger;
+    $(".altermoviePo").attr("value",path);
+    path="../"+path;
+    // alert(path);
+    // $(".abc").attr("src","../image/test001.jpg");
+    $(".altermovieNo").attr("value",no);
+    $(".abc").attr("src",path);
+
+</script>
+
+</body>
+<script>
+    $(function(){
+        $("#ajaxsub").click(function(){
+            // $("#alterPoster").ajaxSubmit({
+            //     url: "/api/fileupload/dome1",
+            //     type: "POST",
+            //     dataType: "json",
+            //     success: function (res) {
+            //         //处理成功后的业务逻辑
+            //     }
+            // })
+        })
+    })
+</script>
+</html>
