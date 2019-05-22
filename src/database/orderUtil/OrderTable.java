@@ -26,6 +26,7 @@ public class OrderTable implements TableOperation {
                 "Odate DateTime," +
                 "Sno Char(12),"+
                 "Uno Char(50), " +
+                "seat Char(50), " +
                 " Foreign Key(Sno) References " +
                 SceneTable.sceneTableName + "(Sno)" +
                 //todo: order shouldn't be deleted, about money
@@ -53,7 +54,7 @@ public class OrderTable implements TableOperation {
      */
     @Override
     public boolean insert(Object o) {
-        String sql = "Insert Into " + tableName + " Values(?, ?, ?,?)";
+        String sql = "Insert Into " + tableName + " Values(?, ?, ?,?,?)";
         PreparedStatement pstmt = null;
         Order order = (Order) o;
         try {
@@ -63,6 +64,7 @@ public class OrderTable implements TableOperation {
             pstmt.setString(2, order.getOdateTime());
             pstmt.setString(3, order.getSno());
             pstmt.setString(4, order.getUno());
+            pstmt.setString(5,order.getSeat());
 
             if (pstmt.executeUpdate() > 0) {
                 SimpleLogger.logger.info("insert " + order.showSelf()
@@ -110,6 +112,7 @@ public class OrderTable implements TableOperation {
                 order.setOdateTime(rs.getString("Odate"));
                 order.setSno(rs.getString("Sno"));
                 order.setUno(rs.getString("Uno"));
+                order.setSeat(rs.getString("seat"));
 
                 SimpleLogger.logger.info("select " + order.showSelf() +
                         " from table '" + tableName + "'");
@@ -163,6 +166,12 @@ public class OrderTable implements TableOperation {
                 sql += ", ";
             }
             sql += (" Uno = '" + order.getUno() + "'");
+        }
+        if (order.getSeat() != null) {
+            if (0 < count++) {
+                sql += ", ";
+            }
+            sql += (" seat = '" + order.getSeat() + "'");
         }
         sql += " Where Ono = '" + order.getOno() + "'";
         //----------------------------------
