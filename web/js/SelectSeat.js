@@ -42,7 +42,8 @@ $(".action--buy").click(function(){
         contentType:"charset=utf-8",
         success:function (data) {
             if(data==="successful"){
-                alert("购票成功")
+                alert("购票成功");
+                window.location.href = "../pages/MyOrder.html";
             }else if(data==="fail"){
                 alert("购票失败，请重试")
             }

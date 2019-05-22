@@ -57,4 +57,10 @@ function showMessage(data) {
         $(this).text("￥"+data[i]["price"]);
     });
 
+    $(".order-detail").each(function (i) {
+        $(this).click(function () {
+            localStorage.setItem('Ono',data[i]["Ono"])
+        })
+    });
+
 }

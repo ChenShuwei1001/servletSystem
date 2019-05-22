@@ -26,7 +26,7 @@ if(isLogin==null||isLogin!=="true"){
 
             if(i===0){
                 $(this).text("我的订单");
-                $(this).attr('href','');
+                $(this).attr('href','../pages/MyOrder.html');
             }else if(i===1){
                 $(this).text("退出登录");
                 var url = location.href;
