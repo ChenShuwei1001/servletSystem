@@ -20,7 +20,7 @@ public class UserTable implements TableOperation {
     @Override
     public void createTable() {
         String sql = "Create Table "+ userTableName +"(" +
-                "Uno Char(12) Primary Key," +
+                "Uno Char(50) Primary Key," +
                 "Uname Char(20)," +
                 "Upswd Char(20)," +
                 "Utel Char(20)," +

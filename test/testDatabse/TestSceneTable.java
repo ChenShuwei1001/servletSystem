@@ -4,8 +4,8 @@ import database.sceneUtil.Scene;
 import database.sceneUtil.SceneTable;
 import database.movieSystem.MovieSystemDB;
 
-public class testSceneTable {
-    public static void main(String[] args) {
+public class TestSceneTable {
+    public static void handleSceneTable(){
         MovieSystemDB.DBinit();
         SceneTable sceneTable = MovieSystemDB.getSceneTable();
         //test insert
@@ -48,5 +48,9 @@ public class testSceneTable {
 
         //test delete, make a breakpoint here
         sceneTable.delete(scene2.getSno());
+    }
+
+    public static void main(String[] args) {
+        TestSceneTable.handleSceneTable();
     }
 }

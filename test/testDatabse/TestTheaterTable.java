@@ -6,8 +6,8 @@ import database.movieUtil.MovieTable;
 import database.theaterUtil.Theater;
 import database.theaterUtil.TheaterTable;
 
-public class testTheaterTable {
-    public static void main(String[] args) {
+public class TestTheaterTable {
+    public static void handleTheaterTable(){
         MovieSystemDB.DBinit();
         TheaterTable theaterTable = MovieSystemDB.getTheaterTable();
 
@@ -48,5 +48,9 @@ public class testTheaterTable {
         theaterTable.update(theaterUpdate);
         //test delete, make a breakpoint here
 //        movieTable.delete(movie2.getMno());
+    }
+
+    public static void main(String[] args){
+        TestTheaterTable.handleTheaterTable();
     }
 }

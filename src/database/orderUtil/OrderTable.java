@@ -22,10 +22,10 @@ public class OrderTable implements TableOperation {
     @Override
     public void createTable() {
         String sql = "Create Table " + tableName + "(" +
-                "Ono Char(12) Primary Key," +
-                "Odate Char(20)," +
+                "Ono Char(50) Primary Key," +
+                "Odate DateTime," +
                 "Sno Char(12),"+
-                "Uno Char(12), " +
+                "Uno Char(50), " +
                 " Foreign Key(Sno) References " +
                 SceneTable.sceneTableName + "(Sno)" +
                 //todo: order shouldn't be deleted, about money
@@ -60,7 +60,7 @@ public class OrderTable implements TableOperation {
             pstmt = MovieSystemDB.getConn().prepareStatement(sql);
 
             pstmt.setString(1, order.getOno());
-            pstmt.setString(2, order.getOdate());
+            pstmt.setString(2, order.getOdateTime());
             pstmt.setString(3, order.getSno());
             pstmt.setString(4, order.getUno());
 
@@ -107,7 +107,7 @@ public class OrderTable implements TableOperation {
                 Order order = new Order();
 
                 order.setOno(rs.getString("Ono"));
-                order.setOdate(rs.getString("Odate"));
+                order.setOdateTime(rs.getString("Odate"));
                 order.setSno(rs.getString("Sno"));
                 order.setUno(rs.getString("Uno"));
 
@@ -146,11 +146,11 @@ public class OrderTable implements TableOperation {
         Order order = (Order) o;
         //make sql statement
         //----------------------------------
-        if (order.getOdate() != null) {
+        if (order.getOdateTime() != null) {
             if (0 < count++) {
                 sql += ", ";
             }
-            sql += (" Odate = '" + order.getOdate() + "'");
+            sql += (" Odate = '" + order.getOdateTime() + "'");
         }
         if (order.getSno() != null) {
             if (0 < count++) {
