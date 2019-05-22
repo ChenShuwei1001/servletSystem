@@ -10,6 +10,7 @@ public class User implements ClassFunction {
     //Do not store password plaintext in database, you should store password coded by some algorithm
     private String Utel;    //the userUtil's telephone
     private double Ubalance;       //the balance of a userUtil
+    //todo:delete Uorder
     private String Uorder;          //the userUtil's orderInformation
 
     public User() {
