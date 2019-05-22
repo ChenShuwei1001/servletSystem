@@ -1,28 +1,54 @@
-function getParams(url) {
-    var theRequest = new Object();
-    if (!url)
-        url = location.href;
-    if (url.indexOf("?") !== -1)
-    {
-        var str = url.substr(url.indexOf("?") + 1) + "&";
-        var strs = str.split("&");
-        for (var i = 0; i < strs.length - 1; i++)
-        {
-            var key = strs[i].substring(0, strs[i].indexOf("="));
-            var val = strs[i].substring(strs[i].indexOf("=") + 1);
-            theRequest[key] = val;
+window.onload=function (){
+    $.ajax({
+        type:"GET",
+        url:"/UsedSeat?Sno="+localStorage.getItem('Sno'),
+        contentType:"charset=utf-8",
+        success:function (selectSeats) {
+            showSelectSeats(selectSeats)
+        },
+        error:function () {
+            alert("连接服务器失败！")
         }
+    })
+};
+
+function showSelectSeats(data){
+    var seats = data.split(",");
+    for(var num in seats){
+        var Part = "#"+seats[num][0];
+        $(Part+" div").each(function (i) {
+            console.log(i);
+            if($(this).data("tooltip")===seats[num]){
+                $(this).attr('class','row__seat row__seat--reserved');
+            }
+        })
     }
-    return theRequest;
 }
 
 $(".action--buy").click(function(){
+    var s="";
+    var len = $(".row__seat--selected").length;
+    $(".row__seat--selected").each(function (i) {
+        if(i!==len-1){
+            s += $(this).data("tooltip")+",";
+        }else {
+            s += $(this).data("tooltip");
+        }
 
-    var params = getParams(location.href);
-    //获取地址栏上的userName
-    var sessionId =  params.sessionId;
-    var hallId = params.hallId;
-    var s = $(".row__seat--selected").data("tooltip");
-    window.location.href = "/MovieManager/BuyTicketAction?userId=${sessionScope.user.id}&sessionId="+sessionId+"&hallId="+hallId+"&seat="+s;
-
-})
+    });
+    $.ajax({
+        type:"GET",
+        url:"/InsertSeatOrder?Sno="+localStorage.getItem('Sno')+"&email="+localStorage.getItem('email')+"&seat="+s,
+        contentType:"charset=utf-8",
+        success:function (data) {
+            if(data==="successful"){
+                alert("购票成功")
+            }else if(data==="fail"){
+                alert("购票失败，请重试")
+            }
+        },
+        error:function () {
+            alert("请求服务器出错！")
+        }
+    })
+});

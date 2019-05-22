@@ -97,6 +97,9 @@ function showTimeList(data) {
         $(this).find('a').each(function () {
             //只有一个a标签
             $(this).click(function () {
+                debugger;
+                localStorage.setItem('Sno',data[i]["sno"]);
+
                 //判断是否登录了
                 var isLogin = localStorage.getItem('isLogin');
                 if(isLogin==null||isLogin!=="true"){

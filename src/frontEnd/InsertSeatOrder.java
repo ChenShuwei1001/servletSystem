@@ -7,6 +7,7 @@ import database.orderUtil.Order;
 import database.sceneUtil.Scene;
 import frontEnd.utils.ServletUtils;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +15,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+@WebServlet(name = "InsertSeatOrder", urlPatterns = {"/InsertSeatOrder"})
 public class InsertSeatOrder extends HttpServlet {
 
     /**
