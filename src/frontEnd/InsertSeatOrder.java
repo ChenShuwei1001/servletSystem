@@ -75,10 +75,10 @@ public class InsertSeatOrder extends HttpServlet {
         return ret;
     }
 
-    public boolean insertOrder(String Sno, String Uno){
+    public boolean insertOrder(String Sno, String Uno, String seat){
         String Odate = getDateTime();
         String Ono = handleDateTime(Odate)+Uno;
-        Order order = new Order(Ono, Odate, Sno, Uno);
+        Order order = new Order(Ono, Odate, Sno, Uno, seat);
         if(true == MovieSystemDB.getOrderTable().insert(order)){
             return true;
         }
@@ -97,7 +97,7 @@ public class InsertSeatOrder extends HttpServlet {
         String response = "fail";
         try {
             MovieSystemDB.getConn().setAutoCommit(false);
-            if(updateSeat(Sno, newSeat) && insertOrder(Sno, Uno)){
+            if(updateSeat(Sno, newSeat) && insertOrder(Sno, Uno,newSeat)){
                 response = "successful";
                 MovieSystemDB.getConn().commit();
             }

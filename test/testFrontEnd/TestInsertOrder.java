@@ -8,6 +8,6 @@ public class TestInsertOrder {
         MovieSystemDB.DBinit();
         InsertSeatOrder insertSeatOrder = new InsertSeatOrder();
         insertSeatOrder.updateSeat("1","4");
-        insertSeatOrder.insertOrder("1","1");
+        insertSeatOrder.insertOrder("1","1","A1,B2");
     }
 }
