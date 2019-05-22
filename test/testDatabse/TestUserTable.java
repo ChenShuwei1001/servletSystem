@@ -11,7 +11,7 @@ public class TestUserTable {
 
         //test insert
         User user = new User("test@qq.com", "test", "test", "test",
-                0, "null");
+                0);
         userTable.insert(user);
 
         //test select

@@ -28,7 +28,7 @@ function showMessage(data) {
     });
 
     $(".poster img").each(function (i) {
-        // $(this).attr('src','/image?path='+data[i]["Odate"]);
+        $(this).attr('src','/image?path='+data[i]["MposterPath"]);
     });
 
     $(".movie-name").each(function (i) {

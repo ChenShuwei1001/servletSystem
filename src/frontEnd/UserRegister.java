@@ -20,7 +20,7 @@ public class UserRegister extends HttpServlet {
         String Uname = req.getParameter("Uname");
         String Upswd = req.getParameter("Upswd");
 
-        User user = new User(email, Uname, Upswd, "", 0, "");
+        User user = new User(email, Uname, Upswd, "", 0);
 
         String response = "fail";
         if(MovieSystemDB.getUserTable().insert(user)){

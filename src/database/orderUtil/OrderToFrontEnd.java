@@ -28,6 +28,7 @@ public class OrderToFrontEnd {
     private Double price;
 
     public OrderToFrontEnd(Order order, Movie movie, Scene scene, Theater theater){
+        //todo MposterPath exist?error handle
         String []dateTime = order.getOdateTime().split(" ");
         this.Odate = dateTime[0];
         this.Ono = order.getOno();
