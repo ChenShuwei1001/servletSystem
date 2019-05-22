@@ -5,7 +5,7 @@ import database.movieUtil.Movie;
 import database.sceneUtil.Scene;
 import database.theaterUtil.Theater;
 
-public class OrderToFrontEnd {
+public class OrdersToFrontEnd {
     @JSONField(name = "Odate")
     private String Odate;
     @JSONField(name = "Ono")
@@ -27,7 +27,7 @@ public class OrderToFrontEnd {
     @JSONField(name = "price")
     private Double price;
 
-    public OrderToFrontEnd(Order order, Movie movie, Scene scene, Theater theater){
+    public OrdersToFrontEnd(Order order, Movie movie, Scene scene, Theater theater){
         String []dateTime = order.getOdateTime().split(" ");
         this.Odate = dateTime[0];
         this.Ono = order.getOno();

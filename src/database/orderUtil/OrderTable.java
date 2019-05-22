@@ -27,6 +27,7 @@ public class OrderTable implements TableOperation {
                 "Sno Char(12),"+
                 "Uno Char(50), " +
                 "seat Char(50), " +
+                "price double, " +
                 " Foreign Key(Sno) References " +
                 SceneTable.sceneTableName + "(Sno)" +
                 //todo: order shouldn't be deleted, about money
@@ -54,7 +55,7 @@ public class OrderTable implements TableOperation {
      */
     @Override
     public boolean insert(Object o) {
-        String sql = "Insert Into " + tableName + " Values(?, ?, ?,?,?)";
+        String sql = "Insert Into " + tableName + " Values(?, ?, ?,?,?,?)";
         PreparedStatement pstmt = null;
         Order order = (Order) o;
         try {
@@ -65,6 +66,7 @@ public class OrderTable implements TableOperation {
             pstmt.setString(3, order.getSno());
             pstmt.setString(4, order.getUno());
             pstmt.setString(5,order.getSeat());
+            pstmt.setDouble(6,order.getPrice());
 
             if (pstmt.executeUpdate() > 0) {
                 SimpleLogger.logger.info("insert " + order.showSelf()
@@ -113,6 +115,7 @@ public class OrderTable implements TableOperation {
                 order.setSno(rs.getString("Sno"));
                 order.setUno(rs.getString("Uno"));
                 order.setSeat(rs.getString("seat"));
+                order.setPrice(rs.getDouble("price"));
 
                 SimpleLogger.logger.info("select " + order.showSelf() +
                         " from table '" + tableName + "'");
@@ -172,6 +175,12 @@ public class OrderTable implements TableOperation {
                 sql += ", ";
             }
             sql += (" seat = '" + order.getSeat() + "'");
+        }
+        if (order.getPrice() != 0) {
+            if (0 < count++) {
+                sql += ", ";
+            }
+            sql += (" price = " + order.getPrice() );
         }
         sql += " Where Ono = '" + order.getOno() + "'";
         //----------------------------------

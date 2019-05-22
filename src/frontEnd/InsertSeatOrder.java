@@ -78,7 +78,11 @@ public class InsertSeatOrder extends HttpServlet {
     public boolean insertOrder(String Sno, String Uno, String seat){
         String Odate = getDateTime();
         String Ono = handleDateTime(Odate)+Uno;
-        Order order = new Order(Ono, Odate, Sno, Uno, seat);
+        String []seatnum = seat.split(", ");
+
+        Scene scene = MovieSystemDB.getSceneTable().select(Sno);
+        double price = scene.getPrice()*seatnum.length;
+        Order order = new Order(Ono, Odate, Sno, Uno, seat,price);
         if(true == MovieSystemDB.getOrderTable().insert(order)){
             return true;
         }

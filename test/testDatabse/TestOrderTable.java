@@ -11,7 +11,7 @@ public class TestOrderTable {
         OrderTable orderTable = MovieSystemDB.getOrderTable();
         //test insert
         Order order = new Order("1", "2018-04-24 12:00:00",
-                "1", "1","A1,A2,A3");
+                "1", "1","A1,A2,A3",0);
         orderTable.insert(order);
 
         //test select
