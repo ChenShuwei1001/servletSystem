@@ -3,7 +3,6 @@ package database.userUtil;
 import database.DBOpration;
 import database.baseInterfaces.TableOperation;
 import database.movieSystem.MovieSystemDB;
-import database.movieUtil.MovieTable;
 import logger.SimpleLogger;
 
 import java.sql.PreparedStatement;
@@ -53,7 +52,7 @@ public class UserTable implements TableOperation {
             pstmt = MovieSystemDB.getConn().prepareStatement(sql);
 
             pstmt.setString(1, user.getUno());
-            pstmt.setString(2, user.getUnama());
+            pstmt.setString(2, user.getUname());
             pstmt.setString(3, user.getUpswd());
             pstmt.setString(4, user.getUtel());
             pstmt.setDouble(5, user.getUbalance());
@@ -103,7 +102,7 @@ public class UserTable implements TableOperation {
                 User user = new User();
 
                 user.setUno(rs.getString("Uno"));
-                user.setUnama(rs.getString("Uname"));
+                user.setUname(rs.getString("Uname"));
                 user.setUpswd(rs.getString("Upswd"));
                 user.setUtel(rs.getString("Utel"));
                 user.setUbalance(rs.getDouble("Ubalance"));
@@ -143,11 +142,11 @@ public class UserTable implements TableOperation {
         User user = (User)o;
         //make sql statement
         //----------------------------------
-        if (user.getUnama() != null) {
+        if (user.getUname() != null) {
             if (0 < count++) {
                 sql += ", ";
             }
-            sql += (" Uname = '" + user.getUnama() + "'");
+            sql += (" Uname = '" + user.getUname() + "'");
         }
         if (user.getUpswd() != null) {
             if (0 < count++) {

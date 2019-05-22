@@ -13,7 +13,7 @@ public class TestSceneTable {
                 "10:40:00", "13:00:00",
                 "英语", "3D厅","2号厅",
                 "郫都区",
-                "2018-04-24", "1,2,3", 50);
+                "2018-04-24", "A1,B2,C3", 50);
         sceneTable.insert(scene);
         scene.setSno("2");
         sceneTable.insert(scene);

@@ -19,11 +19,11 @@ public class TestUserTable {
 
         //test update
         user2.setUno("2");
-        user2.setUnama("陈大屌");
+        user2.setUname("陈大屌");
         userTable.insert(user2);
         User userUpdate = new User();
         userUpdate.setUno("1");
-        userUpdate.setUnama("陈叔炜");
+        userUpdate.setUname("陈叔炜");
         userTable.update(userUpdate);
 
         //test delete, make a breakpoint here

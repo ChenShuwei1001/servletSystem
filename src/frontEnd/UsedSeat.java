@@ -5,11 +5,12 @@ import database.movieSystem.MovieSystemDB;
 import database.sceneUtil.Scene;
 import frontEnd.utils.ServletUtils;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+@WebServlet(name = "UsedSeat", urlPatterns = {"/UsedSeat"})
 public class UsedSeat extends HttpServlet {
 
     public String getSeat(String Sno){
