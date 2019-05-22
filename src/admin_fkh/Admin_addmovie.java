@@ -31,7 +31,11 @@ public class Admin_addmovie extends HttpServlet {
 
 
         //设置海报路径
-        String Path="F:\\myCode\\411movieSystemImage\\";
+//        String Path="F:\\myCode\\411movieSystemImage\\";
+        String PathStemp = this.getClass().getClassLoader().getResource(".").getPath();
+        //        F:\myCode\411movieSystem\servletSystem\web\image
+        String Path=PathStemp.substring(1,PathStemp.indexOf("out"))+"web/image/";
+
 
         Part result=  req.getPart("addMpo");
 
@@ -40,7 +44,12 @@ public class Admin_addmovie extends HttpServlet {
         String movieEngName=req.getParameter("addEngname");
         String Mduration=req.getParameter("addMTL");
         String MboxOffice=req.getParameter("addMcash");
-        String moviePath=Path+movieNo+movieName+".jpg";
+
+//        String moviePath=Path+movieNo+movieName+".jpg";
+        String moviePath=movieNo+movieName+".jpg";//
+        //存储的还是绝对路径，admin使用时 自动切割
+        String moviePath2=Path+moviePath;
+
         String movieoD=req.getParameter("addMoD");
         String movieoA=req.getParameter("addMoA");
         String movieoT=req.getParameter("addMoT");
@@ -60,7 +69,7 @@ public class Admin_addmovie extends HttpServlet {
                 movieEngName, //英文名
                 Mduration,//时长
                 Double.valueOf(MboxOffice),//票房
-                moviePath, //海报
+                moviePath2, //海报  执行语句 alter table movie modify column mposterpath varchar(100);
                 movieoD, //导演
                 movieoA,//演员
                 movieoT, //类型
@@ -75,7 +84,7 @@ public class Admin_addmovie extends HttpServlet {
 
 
         if(result.getContentType().contains("image")){
-            result.write(moviePath);
+            result.write(Path+moviePath);
         }else{
 
         }
