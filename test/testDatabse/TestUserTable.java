@@ -4,8 +4,8 @@ import database.movieSystem.MovieSystemDB;
 import database.userUtil.User;
 import database.userUtil.UserTable;
 
-public class testUserTable {
-    public static void main(String[] args) {
+public class TestUserTable {
+    public static void handleUserTable(){
         MovieSystemDB.DBinit();
         UserTable userTable = MovieSystemDB.getUserTable();
 
@@ -28,5 +28,9 @@ public class testUserTable {
 
         //test delete, make a breakpoint here
         userTable.delete(user2.getUno());
+    }
+
+    public static void main(String[] args) {
+        TestUserTable.handleUserTable();
     }
 }

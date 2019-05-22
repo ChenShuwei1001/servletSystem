@@ -4,20 +4,20 @@ import database.baseInterfaces.ClassFunction;
 
 public class Order  implements ClassFunction{
     private String Ono;
-    private String Odate;
+    private String OdateTime;
     private String Sno;
     private String Uno;
 
     public Order() {
         this.Ono = null;
-        this.Odate = null;
+        this.OdateTime = null;
         this.Sno = null;
         this.Uno = null;
     }
 
     public Order(String Ono, String Odate, String Sno, String Uno) {
         this.Ono = Ono;
-        this.Odate = Odate;
+        this.OdateTime = Odate;
         this.Sno = Sno;
         this.Uno = Uno;
     }
@@ -26,7 +26,7 @@ public class Order  implements ClassFunction{
     public String showSelf() {
         return "{" +
                 this.Ono + ", " +
-                this.Odate + ", " +
+                this.OdateTime + ", " +
                 this.Sno  + ", "+
                 this.Uno + "}";
     }
@@ -46,12 +46,12 @@ public class Order  implements ClassFunction{
         Sno = sno;
     }
 
-    public String getOdate() {
-        return Odate;
+    public String getOdateTime() {
+        return OdateTime;
     }
 
-    public void setOdate(String odate) {
-        Odate = odate;
+    public void setOdateTime(String odateTime) {
+        OdateTime = odateTime;
     }
 
     public String getUno() {
