@@ -9,11 +9,6 @@ $(document).keypress(function (e) {
     }
 });
 
-//粒子背景特效
-$('body').particleground({
-    dotColor: '#E8DFE8',
-    lineColor: '#133b88'
-});
 $('input[name="pwd"]').focus(function () {
     $(this).attr('type', 'password');
 });
@@ -37,6 +32,7 @@ $('input[name="login"],input[name="pwd"]').keyup(function () {
         }, 200);
     }
 });
+
 var open = 0;
 layui.use('layer', function () {
     /*var msgalert = '默认账号:' + truelogin + '<br/> 默认密码:' + truepwd;

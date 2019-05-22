@@ -4,11 +4,7 @@ $(document).keypress(function (e) {
         $('input[type="button"]').click();
     }
 });
-//粒子背景特效
-$('body').particleground({
-    dotColor: '#E8DFE8',
-    lineColor: '#133b88'
-});
+
 $('input[name="pwd"]').focus(function () {
     $(this).attr('type', 'password');
 });
@@ -111,7 +107,14 @@ layui.use('layer', function () {
                                 localStorage.setItem('isLogin','true');
                                 //跳转操作
                                 setTimeout(function () {
-                                    window.location.href = "../pages/HomePage.html";
+                                    if(localStorage.getItem('oldPage')==null){
+                                        window.location.href = "../pages/HomePage.html";
+                                        localStorage.removeItem('oldPage')
+                                    }else {
+                                        window.location.href = localStorage.getItem('oldPage');
+                                        localStorage.removeItem('oldPage')
+                                    }
+
                                 }, 1000);
 
                             } else {

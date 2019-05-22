@@ -103,8 +103,12 @@
 	    width: 56px;
 	    height: 100%;
 	}
-	.header .user-info .user-avatar:hover{
-
+	.header .user-info .user-avatar:hover .user-menu{
+		display: block;
+	}
+	.header .user-info .user-avatar:hover .caret{
+		border-bottom: 5px solid #666;
+		border-top: 0;
 	}
 	.header .user-info .user-avatar img {
 	    margin-top: 20px;

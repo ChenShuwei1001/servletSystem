@@ -85,7 +85,7 @@ function showTimeList(data) {
     $("#my-time-body tr").each(function (i) {
         $(this).find('span').each(function (k) {
             if(k===0){
-                $(this).text(data[i]["location"]);
+                $(this).text(data[i]["beginTime"]);
             } else if(k===1){
                 $(this).text(data[i]["language"]);
             } else if(k===2){
@@ -93,6 +93,19 @@ function showTimeList(data) {
             } else if(k===4){
                 $(this).text(data[i]["price"]);
             }
+        });
+        $(this).find('a').each(function () {
+            //只有一个a标签
+            $(this).click(function () {
+                //判断是否登录了
+                var isLogin = localStorage.getItem('isLogin');
+                if(isLogin==null||isLogin!=="true"){
+                    window.location.href = "../pages/Login.html";
+                    localStorage.setItem('oldPage',location.href);
+                }else if(isLogin==="true"){
+                    window.location.href = "../pages/SelectSeat.html";
+                }
+            })
         })
     })
 

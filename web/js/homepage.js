@@ -62,13 +62,21 @@ function MovieList(data) {
 
     $("#movie-item-hot-play1 img").each(function (i) {
         var pic = data[i]["MposterPath"];
-        $(this).attr({'src':"/image?path="+pic,'id':data[i]["Mno"]});
+        $(this).attr({'src':"/image?path="+pic,'name':data[i]["Mno"]});
+    });
+
+    $("#movie-item-hot-play1 .movie-sale a").each(function (i) {
+        $(this).attr('name',data[i]["Mno"]) ;
+        $(this).click(function () {
+            var temp = $(this).attr('name');
+            localStorage.setItem('key',temp);
+        })
     });
 
     $("#movie-item-img-my img").click(function (event) {
         debugger;
-        var ID = $(event.target).attr("id");
+        var ID = $(event.target).attr("name");
         localStorage.setItem('key',ID);
         window.open("MovieDetail.html")
-    })
+    });
 }
