@@ -38,7 +38,7 @@ public class OrdersToFrontEnd {
         this.seat = order.getSeat();
         this.beginDate = scene.getSdate();
         this.beginTime = scene.getBeginTime();
-        this.price = scene.getPrice();
+        this.price = order.getPrice();
     }
 
     public String getOdate() {
