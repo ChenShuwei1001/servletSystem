@@ -5,7 +5,7 @@ import database.DBOpration;
 import database.movieSystem.MovieSystemDB;
 import database.movieUtil.Movie;
 import database.orderUtil.Order;
-import database.orderUtil.OrderToFrontEnd;
+import database.orderUtil.OrdersToFrontEnd;
 import database.sceneUtil.Scene;
 import database.theaterUtil.Theater;
 import frontEnd.utils.ServletUtils;
@@ -21,7 +21,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class GetOrders extends HttpServlet {
 
-    public LinkedBlockingQueue<OrderToFrontEnd> getOrders(String Uno){
+    public LinkedBlockingQueue<OrdersToFrontEnd> getOrders(String Uno){
         LinkedBlockingQueue<String> Onos = new LinkedBlockingQueue<>();
         String sql = "Select Ono from orders where Uno = '" + Uno +"'";
         Statement stmt = null;
@@ -37,7 +37,7 @@ public class GetOrders extends HttpServlet {
         } finally {
             DBOpration.closeRsStmt(rs, stmt);
         }
-        LinkedBlockingQueue<OrderToFrontEnd> orders = new LinkedBlockingQueue<>();
+        LinkedBlockingQueue<OrdersToFrontEnd> orders = new LinkedBlockingQueue<>();
         while(!Onos.isEmpty()){
             try {
                 String Ono = Onos.remove();
@@ -52,8 +52,8 @@ public class GetOrders extends HttpServlet {
                 String Tno = scene.getTno();
                 Theater theater = MovieSystemDB.getTheaterTable().select(Tno);
 
-                OrderToFrontEnd orderToFrontEnd =
-                        new OrderToFrontEnd(order, movie, scene, theater);
+                OrdersToFrontEnd orderToFrontEnd =
+                        new OrdersToFrontEnd(order, movie, scene, theater);
                 orders.put(orderToFrontEnd);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -66,7 +66,7 @@ public class GetOrders extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String Uno = req.getParameter("email");
 
-        LinkedBlockingQueue<OrderToFrontEnd> orders = getOrders(Uno);
+        LinkedBlockingQueue<OrdersToFrontEnd> orders = getOrders(Uno);
         ServletUtils.resJsonString(resp, JSON.toJSONString(orders));
     }
 }

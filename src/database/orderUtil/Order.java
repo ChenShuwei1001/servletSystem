@@ -8,6 +8,7 @@ public class Order  implements ClassFunction{
     private String Sno;
     private String Uno;
     private String seat;
+    private double price;
 
     public Order() {
         this.Ono = null;
@@ -15,14 +16,16 @@ public class Order  implements ClassFunction{
         this.Sno = null;
         this.Uno = null;
         this.seat = null;
+        this.price = 0;
     }
 
-    public Order(String Ono, String Odate, String Sno, String Uno, String seat) {
+    public Order(String Ono, String Odate, String Sno, String Uno, String seat, double price) {
         this.Ono = Ono;
         this.OdateTime = Odate;
         this.Sno = Sno;
         this.Uno = Uno;
         this.seat = seat;
+        this.price = price;
     }
 
     @Override
@@ -32,7 +35,8 @@ public class Order  implements ClassFunction{
                 this.OdateTime + ", " +
                 this.Sno  + ", "+
                 this.Uno + ", " +
-                this.seat + "}";
+                this.seat + ", " +
+                Double.toString(this.price) + "}";
     }
     public String getOno() {
         return Ono;
@@ -72,5 +76,13 @@ public class Order  implements ClassFunction{
 
     public void setSeat(String seat) {
         this.seat = seat;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

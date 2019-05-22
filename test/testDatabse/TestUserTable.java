@@ -11,7 +11,7 @@ public class TestUserTable {
 
         //test insert
         User user = new User("1", "Kelvin", "wdnmd", "13568994472",
-                99999999, "null");
+                99999999);
         userTable.insert(user);
 
         //test select
