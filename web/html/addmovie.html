@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <!--<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>-->
+    <!--<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>-->
+    <!--<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
+
 </head>
 <body>
 
-<form id="addForm1" action="/Admin_addmovie" method="POST" enctype="multipart/form-data">
+<form id="addForm3" action="/Admin_addmovie" method="POST" enctype="multipart/form-data">
     电影编号：<input type="text" name="addMno"><br>
     电影名字：<input type="text" name="addMname"><br>
     英文名：<input type="text" name="addEngname"><br>
@@ -25,6 +30,24 @@
     <input type="submit" value="确定">&nbsp<input type="Reset" value="重置"><!--onclick="submitData()-->
 </form>
 </body>
+<script>
+    $(document).ready(function() {
+
+// 提交表单
+
+//submit 增加回调函数  ,当前 formId是表单Id
+
+        $("#addForm3").submit(function(){
+
+            window.close();
+            // alert("hello")
+
+        });
+
+
+
+    });
+</script>
 </html>
 <!--movieNo,//编号-->
 <!--movieName,-->

@@ -65,6 +65,23 @@ public class Admin_LoadData_movie_list extends HttpServlet {
         }
         return top10;
     }
+    public LinkedBlockingQueue<Movie> getSeatch(String mno){
+        LinkedBlockingQueue<Movie> top10 = new LinkedBlockingQueue<>();
+
+
+
+        try{
+
+
+            Movie movie = MovieSystemDB.getMovieTable().select(mno);
+
+            top10.put(movie);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return top10;
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -73,6 +90,12 @@ public class Admin_LoadData_movie_list extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        String search=req.getParameter("searchMno");
+        if(search!=null){
+            ServletUtils.resJsonString(resp, JSON.toJSONString(getSeatch(search)));
+        }else
+
         ServletUtils.resJsonString(resp, JSON.toJSONString(getTop10()));
     }
 }

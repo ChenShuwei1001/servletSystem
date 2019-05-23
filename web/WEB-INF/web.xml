@@ -38,6 +38,24 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>Admin_alterInfo</servlet-name>
+        <servlet-class>admin_fkh.Admin_alterInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin_alterInfo</servlet-name>
+        <url-pattern>/Admin_alterInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Admin_delete</servlet-name>
+        <servlet-class>admin_fkh.Admin_delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin_delete</servlet-name>
+        <url-pattern>/Admin_delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>ImageUtil_Admin</servlet-name>
         <servlet-class>admin_fkh.ImageUtil_Admin</servlet-class>
     </servlet>
@@ -53,6 +71,7 @@
     <listener>
         <listener-class>listener.DBinit</listener-class>
     </listener>
+
 
 </web-app>
 

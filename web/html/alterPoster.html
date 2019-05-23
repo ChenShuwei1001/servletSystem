@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script type="text/javascript" src="../uploadimg/jquery-3.1.0.min.js"></script>
 </head>
 <body>
     <div class="img-box">
@@ -21,42 +23,39 @@
             </tbody>
         </table>
     </div>
-    <form id="alterPoster" action="/Admin_alterPoster" method="POST" enctype="multipart/form-data">
 
-            编号：<input class="altermovieNo" type="text" name="altermovieMNo"  ><br>
-            海报：<input class="altermoviePo" type="text" name="altermovieMPo12345" >
-        <br>
-        选择新海报：<input type="file" name="alterPosterNew"><br>
-        <input type="submit" value="提交"><!--onclick="submitData()-->
-        <input type="button" value="ajax提交" id="ajaxsub">
+    <form id="addForm2" action="/Admin_alterPoster" method="POST" enctype="multipart/form-data">
+
+        编号：<input class="altermovieNo" type="text" name="altermovieMNo"/><br>
+        海报：<input class="altermoviePo" type="text" name="altermovieMPo12345"/>
+        <input type="file" id="choose" name="alterPosterNew"/>
+        <!--<button onclick="handle()">上传</button>-->
+        <input type="submit" value="提交" >
+        <img class="newImg"/>
     </form>
+
+
     <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+    <script src="http://malsup.github.io/min/jquery.form.min.js"></script>
 <script type="text/javascript">
-    var path=localStorage.getItem("movieParam");
-    var no=localStorage.getItem("movieNO");
+    var path=localStorage.getItem("alterPosterPath");
+    var no=localStorage.getItem("alterMovieItemNo");
     debugger;
     $(".altermoviePo").attr("value",path);
-    path="../"+path;
+    // path="../"+path;
     // alert(path);
     // $(".abc").attr("src","../image/test001.jpg");
     $(".altermovieNo").attr("value",no);
-    $(".abc").attr("src",path);
+
+
+    $(".abc").attr("src","/ImageUtil_Admin?path="+path);
+
+
 
 </script>
 
 </body>
 <script>
-    $(function(){
-        $("#ajaxsub").click(function(){
-            // $("#alterPoster").ajaxSubmit({
-            //     url: "/api/fileupload/dome1",
-            //     type: "POST",
-            //     dataType: "json",
-            //     success: function (res) {
-            //         //处理成功后的业务逻辑
-            //     }
-            // })
-        })
-    })
+
 </script>
 </html>

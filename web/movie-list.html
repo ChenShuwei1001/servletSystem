@@ -23,27 +23,38 @@
   
   <body class="layui-anim layui-anim-up">
 
-    <div class="x-nav">
-      <span class="layui-breadcrumb">
-        <!--<a href="index.html">首页</a>
-        <a href="">演示</a>
-        <a>
-          <cite>导航元素</cite></a>-->
-      </span>
-      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
-        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
-    </div>
+    <!--<div class="x-nav">-->
+      <!--&lt;!&ndash;<span class="layui-breadcrumb">&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<a href="index.html">首页</a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="">演示</a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a>&ndash;&gt;-->
+          <!--&lt;!&ndash;<cite>导航元素</cite></a>&ndash;&gt;&ndash;&gt;-->
+      <!--&lt;!&ndash;</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">&ndash;&gt;-->
+        <!--<i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
+    <!--</div>-->
     <div class="x-body" style="overflow-x:auto;overflow-y:auto">
-      <div class="layui-row">
-        <form class="layui-form layui-col-md12 x-so" method="post" action="/TestServlet">
-          <input type="text" id="moviesname" name="movie" placeholder="请输入电影名字" autocomplete="off" class="layui-input">
-          <button class="layui-btn" id="butmovies" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
-        </form>
-      </div>
+      <!--<div class="layui-row">-->
+        <!--<form class="layui-form layui-col-md12 x-so" method="post" action="/TestServlet">-->
+          <!--<input type="text" id="moviesname" name="movie" placeholder="请输入电影名字" autocomplete="off" class="layui-input">-->
+          <!--<button class="layui-btn" id="butmovies" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>-->
+        <!--</form>-->
+      <!--</div>-->
       <xblock>
-        <button class="layui-btn" onclick="x_admin_show('添加电影','./html/addmovie.html',600,400)"><i class="layui-icon"></i>添加电影</button>
+
+        <div class="layui-row">
+        <div class="layui-inline">
+            <button class="layui-btn" onclick="x_admin_show('添加电影','./html/addmovie.html',600,400)"><i class="layui-icon"></i>添加电影</button>
+        </div>
+        <div class="layui-inline">
+          <div class="layui-form layui-col-md12 x-so">
+            <input type="text" id="moviesnamesearch" name="movie" placeholder="请输入电影名字" autocomplete="off" class="layui-input">
+            <button class="layui-btn" id="butmoviesearch"  lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+          </div>
+        </div>
+        </div>
         <!--<button class="layui-btn" onclick="x_admin_show('添加电影','test.html',600,400)"><i class="layui-icon"></i>添加电影</button>-->
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+        <span class="x-right" style="line-height:40px" id="x-rightid">共有数据：0 条</span>
       </xblock>
 
 
@@ -75,7 +86,7 @@
             <th>评分</th>
             <th>评分人数</th>
             <th>简介</th>
-            <th>修改信息</th>
+            <th>删除</th>
               <!--movieNo,//编号-->
               <!--movieName,-->
               <!--"The avengers 4", //英文名-->
@@ -102,16 +113,17 @@
       </table>
       <div class="page">
         <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
+          <!--<a class="prev" href="">&lt;&lt;</a>-->
+          <!--<a class="num" href="">1</a>-->
+          <!--<span class="current">2</span>-->
+          <!--<a class="num" href="">3</a>-->
+          <!--<a class="num" href="">489</a>-->
+          <!--<a class="next" href="">&gt;&gt;</a>-->
         </div>
       </div>
 
     </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="html/param.js">
     </script>
 
