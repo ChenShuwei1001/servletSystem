@@ -59,8 +59,7 @@ public class MovieOptions extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        getOptions();
-        ServletUtils.resJsonString(resp, JSON.toJSONString(this));
+        ServletUtils.resJsonString(resp, JSON.toJSONString(getOptions()));
     }
 
 }
