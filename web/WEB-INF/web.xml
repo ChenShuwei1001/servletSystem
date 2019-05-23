@@ -6,8 +6,12 @@
 
     <!--fankehu2 add begin-->
     <welcome-file-list>
-        <welcome-file>movie-list.html</welcome-file>
+        <welcome-file>admin-index.html</welcome-file>
     </welcome-file-list>
+
+    <listener>
+        <listener-class>listener.DBinit</listener-class>
+    </listener>
 
 
     <servlet>
@@ -68,10 +72,58 @@
 
 
 
-    <listener>
-        <listener-class>listener.DBinit</listener-class>
-    </listener>
+    <servlet>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <servlet-class>Sevlet.WelcomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <url-pattern>/WelcomeServlet</url-pattern>
+    </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UserShow</servlet-name>
+        <servlet-class>UserPackeage.UserShow</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserShow</servlet-name>
+        <url-pattern>/UserShow</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SceneAdd</servlet-name>
+        <servlet-class>ScenePackeage.SceneAdd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SceneAdd</servlet-name>
+        <url-pattern>/SceneAdd</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SceneServlet</servlet-name>
+        <servlet-class>ScenePackeage.SceneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SceneServlet</servlet-name>
+        <url-pattern>/SceneServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SceneShow</servlet-name>
+        <servlet-class>ScenePackeage.SceneShow</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SceneShow</servlet-name>
+        <url-pattern>/SceneShow</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderShow</servlet-name>
+        <servlet-class>OrderPackeage.OrderShow</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderShow</servlet-name>
+        <url-pattern>/OrderShow</url-pattern>
+    </servlet-mapping>
 
 </web-app>
 
