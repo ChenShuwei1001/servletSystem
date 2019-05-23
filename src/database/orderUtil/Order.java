@@ -19,9 +19,9 @@ public class Order  implements ClassFunction{
         this.price = 0;
     }
 
-    public Order(String Ono, String Odate, String Sno, String Uno, String seat, double price) {
+    public Order(String Ono, String OdateTime, String Sno, String Uno, String seat, double price) {
         this.Ono = Ono;
-        this.OdateTime = Odate;
+        this.OdateTime = OdateTime;
         this.Sno = Sno;
         this.Uno = Uno;
         this.seat = seat;

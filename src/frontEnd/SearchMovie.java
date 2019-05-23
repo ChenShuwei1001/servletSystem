@@ -9,6 +9,7 @@ import database.movieUtil.MovieTable;
 import frontEnd.utils.Pair4Filter;
 import frontEnd.utils.ServletUtils;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.LinkedBlockingQueue;
-
+@WebServlet(name = "SearchMovie", urlPatterns = {"/SearchMovie"})
 public class SearchMovie extends HttpServlet {
 
     public LinkedBlockingQueue<MovieSearched> searchMovie(String Mname){

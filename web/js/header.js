@@ -56,10 +56,9 @@ $(".submit").click(function () {
     if($('#search-film-my .search').val()===""){
         alert("请输入要搜索的电影名字")
     }else{
-        var form_data = $('#search-film-my').serialize();
+        var form_data = "searchMovie=" + $('#search-film-my .search').val();
         console.log(form_data);
         localStorage.setItem('searchMovie',form_data);
         window.location.href = "../pages/MovieSearch.html";
     }
-
 });
