@@ -10,6 +10,7 @@ import database.sceneUtil.Scene;
 import database.theaterUtil.Theater;
 import frontEnd.utils.ServletUtils;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +20,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.LinkedBlockingQueue;
 
+@WebServlet(name = "GetOrders", urlPatterns = {"/GetOrders"})
 public class GetOrders extends HttpServlet {
 
     public LinkedBlockingQueue<OrdersToFrontEnd> getOrders(String Uno){

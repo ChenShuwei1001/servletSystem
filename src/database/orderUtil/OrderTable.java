@@ -111,7 +111,7 @@ public class OrderTable implements TableOperation {
                 Order order = new Order();
 
                 order.setOno(rs.getString("Ono"));
-                order.setOdateTime(rs.getString("Odate"));
+                order.setOdateTime(rs.getString("OdateTime"));
                 order.setSno(rs.getString("Sno"));
                 order.setUno(rs.getString("Uno"));
                 order.setSeat(rs.getString("seat"));

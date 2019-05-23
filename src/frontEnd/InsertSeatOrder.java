@@ -78,7 +78,7 @@ public class InsertSeatOrder extends HttpServlet {
     public boolean insertOrder(String Sno, String Uno, String seat){
         String Odate = getDateTime();
         String Ono = handleDateTime(Odate)+Uno;
-        String []seatnum = seat.split(", ");
+        String []seatnum = seat.split(",");
 
         Scene scene = MovieSystemDB.getSceneTable().select(Sno);
         double price = scene.getPrice()*seatnum.length;
