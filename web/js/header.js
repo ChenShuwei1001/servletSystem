@@ -50,3 +50,16 @@ if(isLogin==null||isLogin!=="true"){
         })
     })
 }
+
+$(".submit").click(function () {
+    debugger;
+    if($('#search-film-my .search').val()===""){
+        alert("请输入要搜索的电影名字")
+    }else{
+        var form_data = $('#search-film-my').serialize();
+        console.log(form_data);
+        localStorage.setItem('searchMovie',form_data);
+        window.location.href = "../pages/MovieSearch.html";
+    }
+
+});

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>搜索结果</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../css/maoyan-common.css"/>
+    <link rel="icon" type="image/x-icon" href="../img/title.ico"/>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/maoyan-query-index.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/myBuyTicket.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="header-top">
+        <div class="header-inner">
+            <a href="./HomePage.html"><img class="logo" src="../img/logo.jpg"></a>
+            <div class="nav">
+                <ul>
+                    <li><a href="../pages/HomePage.html">首页</a></li>
+                    <li><a href="">电影</a></li>
+                    <li><a href="">影院</a></li>
+                    <li><a href="">榜单</a></li>
+                </ul>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar J-login">
+                    <img src="../img/user_not_login_head.png">
+                    <span class="caret"></span>
+                    <ul class="user-menu">
+                        <li><a href="./Login.html">登录</a></li>
+                    </ul>
+                </div>
+            </div>
+            <form id="search-film-my" action="">
+                <input name="searchMovie" class="search" type="search" maxlength="32" placeholder="找影视剧"
+                       autocomplete="off">
+                <input class="submit" type="button" value="">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="search-box">
+    <form data-state-val="{kw:'一条狗'}" class="search-form" data-actform="query-search-click">
+        <input class="kw" type="text" name="kw" maxlength="32" value="一条狗" placeholder="找影视剧、影人、影院" autocomplete="off">
+        <button class="submit" type="submit"></button>
+    </form>
+</div>
+<div class="subnav">
+    <ul class="navbar">
+        <li>
+            <a data-act="subnav-click" data-val="{subnavClick:0}"
+               data-state-val="{subnavId:0}"
+               class="active" href="javascript:void(0);"
+            >影视剧（12）</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="container" id="app" class="page-query/index" >
+    <div class="search-result-box">
+        <dl class="movie-list">
+            <dd>
+                <div class="movie-item">
+                    <a href="/films/1254277" target="_blank" data-act="movie-click" data-val="{movieid:1254277}">
+                        <div class="movie-poster">
+                            <img class="poster-default" src="//s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:5788b470/image/loading_2.e3d934bf.png" />
+                            <img data-src="https://p1.meituan.net/movie/b76f37b5e3484b6837f75ef7b5bf46452066459.jpg@160w_220h_1e_1c" />
+                        </div>
+                    </a>
+                    <div class="channel-action channel-action-sale">
+                        <a>购票</a>
+                    </div>
+
+
+                    <div class="movie-ver"></div>
+                </div>
+                <div class="channel-detail movie-item-title" title="一条狗的使命2">
+                    <a href="/films/1254277" target="_blank" data-act="movies-click" data-val="{movieId:1254277}">一条狗的使命2</a>
+                </div>
+                <div class="movie-item-subtitle">A Dog&#39;s Journey</div>
+                <div class="absolute-info">
+                    <div class="channel-detail channel-detail-orange"><i class="integer">9.</i><i class="fraction">3</i></div>
+
+                    <div class="movie-item-cat">剧情,喜剧,家庭</div>
+                    <div class="movie-item-pub">2019-05-17大陆上映</div>
+                </div>
+        </dl>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="subfooter">
+        <p class="text-center">Copyright &copy; 2019.All rights reserved. </p>
+    </div>
+
+</div>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="../js/MovieSearch.js"></script>
+</body>
+</html>
