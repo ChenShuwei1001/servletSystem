@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="addForm1" action="/Admin_alterInfo" method="POST" enctype="multipart/form-data">
+    电影编号：<input class="altermovieNo" type="text" name="addMno" readonly><br>
+    电影名字：<input class="movieName" type="text" name="addMname"><br>
+    英文名：<input class="movieNEnglish" type="text" name="addEngname"><br>
+    电影时长：<input class="movieNDuration" type="text" name="addMTL"><br>
+    电影票房：<input class="movieNOffice" type="text" name="addMcash"><br>
+    电影海报：<input class="altermoviePo" type="text" name="addMpo" readonly><br>
+    电影导演：<input class="movieNDirector" type="text" name="addMoD"><br>
+    电影演员：<input class="movieNActor" type="text" name="addMoA"><br>
+    电影类别：<input class="movieNType" type="text" name="addMoT"><br>
+    电影语言：<input class="movieNLanguage" type="text" name="addMoL"><br>
+    电影地区：<input class="movieNLocation" type="text" name="addMoC"><br>
+    上映时间：<input class="movieNDate" type="text" name="addMoDA"><br>
+    电影评分：<input class="movieNRating" type="text" name="addMoSC"><br>
+    评分人数：<input class="movieNNumberno" type="text" name="addscoreNum"><br>
+    电影简介：<input class="movieNIntroduction" type="text" name="addMnote"><br>
+    <input type="submit" value="提交"><!--onclick="submitData()-->
+</form>
+</body>
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script src="http://malsup.github.io/min/jquery.form.min.js"></script>
+<script type="text/javascript">
+    var path=localStorage.getItem("path");
+    var no=localStorage.getItem("no");
+    var movieName=localStorage.getItem("name");
+    var movieNEnglish=localStorage.getItem("Ename");
+    var movieNDuration=localStorage.getItem("time");
+    var movieNOffice=localStorage.getItem("piaofang");
+    var movieNDirector=localStorage.getItem("director");
+    var movieNActor=localStorage.getItem("actor");
+    var movieNType=localStorage.getItem("type");
+    var movieNLanguage=localStorage.getItem("language");
+    var movieNLocation=localStorage.getItem("place");
+    var movieNDate=localStorage.getItem("shangyitime");
+    var movieNRating=localStorage.getItem("score");
+    var movieNNumberno=localStorage.getItem("numpeople");
+    var movieNIntroduction=localStorage.getItem("jianjie");
+    // debugger;
+    $(".altermoviePo").attr("value",path);
+    $(".altermovieNo").attr("value",no);
+    $(".movieName").attr("value",movieName);
+    $(".movieNEnglish").attr("value",movieNEnglish);
+    $(".movieNDuration").attr("value",movieNDuration);
+    $(".movieNOffice").attr("value",movieNOffice);
+    $(".movieNDirector").attr("value",movieNDirector);
+    $(".movieNActor").attr("value",movieNActor);
+    $(".movieNType").attr("value",movieNType);
+    $(".movieNLanguage").attr("value",movieNLanguage);
+    $(".movieNLocation").attr("value",movieNLocation);
+    $(".movieNDate").attr("value",movieNDate);
+    $(".movieNRating").attr("value",movieNRating);
+    $(".movieNNumberno").attr("value",movieNNumberno);
+    $(".movieNIntroduction").attr("value",movieNIntroduction);
+
+
+
+
+    // $(".abc").attr("src","/ImageUtil_Admin?path="+path);
+
+
+
+</script>
+</html>

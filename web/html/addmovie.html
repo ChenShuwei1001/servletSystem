@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <!--<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>-->
+    <!--<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>-->
+    <!--<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
+
+</head>
+<body>
+
+<form id="addForm3" action="/Admin_addmovie" method="POST" enctype="multipart/form-data">
+    电影编号：<input type="text" name="addMno"><br>
+    电影名字：<input type="text" name="addMname"><br>
+    英文名：<input type="text" name="addEngname"><br>
+    电影时长：<input type="text" name="addMTL"><br>
+    电影票房：<input type="text" name="addMcash"><br>
+    电影海报：<input type="file" name="addMpo"><br>
+    电影导演：<input type="text" name="addMoD"><br>
+    电影演员：<input type="text" name="addMoA"><br>
+    电影类别：<input type="text" name="addMoT"><br>
+    电影语言：<input type="text" name="addMoL"><br>
+    电影地区：<input type="text" name="addMoC"><br>
+    上映时间：<input type="text" name="addMoDA"><br>
+    电影评分：<input type="text" name="addMoSC"><br>
+    评分人数：<input type="text" name="addscoreNum"><br>
+    电影简介：<input type="text" name="addMnote"><br>
+    <input type="submit" value="确定">&nbsp<input type="Reset" value="重置"><!--onclick="submitData()-->
+</form>
+</body>
+<script>
+    $(document).ready(function() {
+
+// 提交表单
+
+//submit 增加回调函数  ,当前 formId是表单Id
+
+        $("#addForm3").submit(function(){
+
+            window.close();
+            // alert("hello")
+
+        });
+
+
+
+    });
+</script>
+</html>
+<!--movieNo,//编号-->
+<!--movieName,-->
+<!--"The avengers 4", //英文名-->
+<!--"03:02:22",//时长-->
+<!--14.69,//票房-->
+<!--moviePath, //海报-->
+<!--movieoD, //导演-->
+<!--movieoA,//演员-->
+<!--movieoT, //类型-->
+<!--movieoL,-->
+<!--movieoC,//上映地区-->
+<!--movieoDA, //上映时间-->
+<!--Double.valueOf(movieoSC),//评分-->
+<!--145897,//评分人数-->
+<!--"这是电影简介"-->
+<!--);-->
