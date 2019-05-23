@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../img/title.ico"/>
     <link rel="stylesheet" type="text/css" href="../css/style2.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/main2.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../css/movieList.css">
     <link rel="stylesheet" type="text/css" href="../css/myMovieList.css">
@@ -64,8 +64,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="tags-line tags-line-border" data-val="年代">
-                        <div class="tags-title">年代 :</div>
+                    <li class="tags-line tags-line-border" data-val="语言">
+                        <div class="tags-title">语言 :</div>
                         <ul class="tags">
                             <li class="active">
                                 <a data-act="tag-click" data-val="全部" href="javascript:void(0);" >全部</a>
@@ -82,15 +82,15 @@
 
                         <li>
                             <div class="movie-item">
-                                <a href="/MovieManager/FindMovieByIdAction?update=detail&movieId=${u.id}" target="_blank" data-act="movie-click" data-val="{movieid:1208282}">
+                                <a href="./MovieDetail.html" target="_blank" data-act="movie-click" data-val="{movieid:1208282}">
                                     <div class="movie-poster">
 
-                                        <img src="${u.picture}">
+                                        <img src="">
                                     </div>
                                 </a>
                             </div>
                             <div class="channel-detail movie-item-title" title="${u.name }">
-                                <a href="/MovieManager/FindMovieByIdAction?update=detail&movieId=${u.id}" target="_blank" data-act="movies-click" data-val="{movieId:1208282}">${u.name }</a>
+                                <a href="./MovieDetail.html" >${u.name }</a>
                             </div>
 
                             <div class="channel-detail channel-detail-orange"><i class="integer">${u.score}</i>

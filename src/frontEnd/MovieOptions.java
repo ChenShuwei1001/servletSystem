@@ -7,6 +7,7 @@ import database.movieUtil.Movie;
 import database.movieUtil.MovieTable;
 import frontEnd.utils.ServletUtils;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.LinkedBlockingQueue;
 
-
+@WebServlet(name = "MovieOptions", urlPatterns = {"/MovieOptions"})
 public class MovieOptions extends HttpServlet {
 
     public MovieOptions(){}
@@ -59,8 +60,7 @@ public class MovieOptions extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        getOptions();
-        ServletUtils.resJsonString(resp, JSON.toJSONString(this));
+        ServletUtils.resJsonString(resp, JSON.toJSONString(getOptions()));
     }
 
 }

@@ -11,6 +11,7 @@ import frontEnd.utils.Pair4Filter;
 import frontEnd.utils.ServletUtils;
 import logger.SimpleLogger;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.concurrent.LinkedBlockingQueue;
-
+@WebServlet(name = "SelectMovies", urlPatterns = {"/SelectMovies"})
 public class SelectMovies extends HttpServlet {
 
     public static LinkedBlockingQueue<MovieToFrontEnd> getMovies(LinkedBlockingQueue<Pair4Filter> attr){

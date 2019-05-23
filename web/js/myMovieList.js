@@ -1,9 +1,11 @@
 window.onload=function (){
     $.ajax({
         type:"GET",
-        url:"",
+        url:"/MovieOptions",
         contentType:"charset=utf-8",
         success:function (data) {
+            debugger;
+            console.log(data);
             showMovieListOptions(data)
         },
         error:function () {
@@ -12,7 +14,7 @@ window.onload=function (){
     })
 };
 
-var MovieType=-1,MovieLocation=-1,MovieTime=-1,MovieOptionData;
+var MovieType=0,MovieLocation=0,MovieTime=0,MovieOptionData;
 function showMovieListOptions(data) {
     MovieOptionData=data;
     
@@ -23,11 +25,11 @@ function showMovieListOptions(data) {
     //0,0,0代表将“全部”设置为active
     setMovieListOptionActive(0,0,0);
 
-    sendMovieListByOptionAjax(-1,-1,-1,data);
+    sendMovieListByOptionAjax(0,0,0,data);
 }
 
 function showMovieType(data) {
-    for(var i=1;i<data.length;i++){
+    for(var i=0;i<data.length;i++){
         $(".tags-lines li[data-val='类型'] ul").append($(".tags-lines li[data-val='类型'] ul li:last").clone());
     }
     $(".tags-lines li[data-val='类型'] ul li a").each(function (i) {
@@ -38,7 +40,7 @@ function showMovieType(data) {
         $(this).attr('my-val',i);
         $(this).click(function (event) {
             MovieType = $(event.target).attr("my-val");
-            setActive(parseInt(MovieType),parseInt(MovieLocation),parseInt(MovieTime));
+            setMovieListOptionActive(parseInt(MovieType),parseInt(MovieLocation),parseInt(MovieTime));
             sendMovieListByOptionAjax(parseInt(MovieType)-1,parseInt(MovieLocation)-1,parseInt(MovieTime)-1)
         })
     });
@@ -46,7 +48,7 @@ function showMovieType(data) {
 }
 
 function showMovieLocation(data) {
-    for(var i=1;i<data.length;i++){
+    for(var i=0;i<data.length;i++){
         $(".tags-lines li[data-val='区域'] ul").append($(".tags-lines li[data-val='区域'] ul li:last").clone());
     }
     $(".tags-lines li[data-val='区域'] ul li a").each(function (i) {
@@ -56,26 +58,26 @@ function showMovieLocation(data) {
         }
         $(this).attr('my-val',i);
         $(this).click(function (event) {
-            MovieType = $(event.target).attr("my-val");
-            setActive(parseInt(MovieType),parseInt(MovieLocation),parseInt(MovieTime));
+            MovieLocation = $(event.target).attr("my-val");
+            setMovieListOptionActive(parseInt(MovieType),parseInt(MovieLocation),parseInt(MovieTime));
             sendMovieListByOptionAjax(parseInt(MovieType)-1,parseInt(MovieLocation)-1,parseInt(MovieTime)-1)
         })
     });
 }
 
 function showMovieTime(data) {
-    for(var i=1;i<data.length;i++){
-        $(".tags-lines li[data-val='年代'] ul").append($(".tags-lines li[data-val='年代'] ul li:last").clone());
+    for(var i=0;i<data.length;i++){
+        $(".tags-lines li[data-val='语言'] ul").append($(".tags-lines li[data-val='语言'] ul li:last").clone());
     }
-    $(".tags-lines li[data-val='年代'] ul li a").each(function (i) {
+    $(".tags-lines li[data-val='语言'] ul li a").each(function (i) {
         if(i!==0){
             $(this).text(data[i-1]);
             $(this).attr('data-val',data[i-1])
         }
         $(this).attr('my-val',i);
         $(this).click(function (event) {
-            MovieType = $(event.target).attr("my-val");
-            setActive(parseInt(MovieType),parseInt(MovieLocation),parseInt(MovieTime));
+            MovieTime = $(event.target).attr("my-val");
+            setMovieListOptionActive(parseInt(MovieType),parseInt(MovieLocation),parseInt(MovieTime));
             sendMovieListByOptionAjax(parseInt(MovieType)-1,parseInt(MovieLocation)-1,parseInt(MovieTime)-1)
         })
     });
@@ -97,7 +99,7 @@ function setMovieListOptionActive(a,b,c) {
             $(this).removeAttr("class")
         }
     });
-    $(".tags-lines li[data-val='年代'] ul li").each(function (i) {
+    $(".tags-lines li[data-val='语言'] ul li").each(function (i) {
         if(i===c){
             $(this).attr("class","active")
         }else {
@@ -107,22 +109,22 @@ function setMovieListOptionActive(a,b,c) {
 }
 
 function sendMovieListByOptionAjax(MovieType, MovieLocation, MovieTime) {
-    var url = "/?";
+    var url = "/SelectMovies?";
 
     if(MovieType===-1){
-        url+="&Tbrand=";
+        url+="&Mtype=";
     }else {
-        url+="&Tbrand="+MovieOptionData[0][MovieType];
+        url+="&Mtype="+MovieOptionData[0][MovieType];
     }
     if(MovieLocation===-1){
-        url+="&location=";
+        url+="&Mlocation=";
     }else {
-        url+="&location="+MovieOptionData[1][MovieLocation];
+        url+="&Mlocation="+MovieOptionData[1][MovieLocation];
     }
     if(MovieTime===-1){
-        url+="&roomType=";
+        url+="&Mlanguage=";
     }else {
-        url+="&roomType="+MovieOptionData[2][MovieTime];
+        url+="&Mlanguage="+MovieOptionData[2][MovieTime];
     }
     $.ajax({
         type:"GET",
@@ -136,14 +138,35 @@ function sendMovieListByOptionAjax(MovieType, MovieLocation, MovieTime) {
             alert("连接服务器超时")
         }
     })
-
 }
 
 function showMovieList(data) {
+    $(".movie-list li").each(function (i) {
+        if(i!==0){
+            $(this).remove();
+        }
+    });
+
+
     for(var i=1;i<data.length;i++){
         $(".movie-list").append($(".movie-list li:last").clone());
     }
+    $(".movie-list li .movie-item img").each(function (i) {
+        $(this).attr('src',"/image?path="+data[i]["MposterPath"]);
+    });
+    $(".movie-list li .movie-item-title a").each(function (i) {
+        $(this).text(data[i]["Mname"]);
+        $(this).click(function () {
+            localStorage.setItem('key',data[i]["Mno"])
+        })
+    });
+    $(".movie-list li .channel-detail-orange i").each(function (i) {
+        $(this).text(data[i]["Mrating"]);
+    });
+
     $(".movie-list li .movie-item a").each(function (i) {
-        
-    })
+        $(this).click(function () {
+            localStorage.setItem('key',data[i]["Mno"])
+        })
+    });
 }

@@ -51,6 +51,7 @@
 	.movies-panel {
   	  margin-top: 40px;
   	  margin-left: 90px;
+      min-height: 350px;
 	}
 	.movies-sorter {
     	overflow: hidden;
