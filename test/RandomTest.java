@@ -1,22 +1,17 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
+import database.movieSystem.MovieSystemDB;
+import frontEnd.MovieOptions;
+import frontEnd.utils.JsonUtils;
 
-class Test {
-    @JSONField(name = "a")
-    private String a;
-    @JSONField(name = "b")
-    private String b;
-
-    public Test() {
-        a = " test A ";
-        b = " test B ";
-    }
-}
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class RandomTest {
 
     public static void main(String[] args) throws InterruptedException {
-        Test test = new Test();
-        System.out.println(JSON.toJSONString(test));
+        MovieSystemDB.DBinit();
+        MovieOptions movieOptions = new MovieOptions();
+        System.out.println(JSON.toJSONString(movieOptions.getOptions()));
+
     }
 }

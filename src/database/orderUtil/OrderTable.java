@@ -22,10 +22,12 @@ public class OrderTable implements TableOperation {
     @Override
     public void createTable() {
         String sql = "Create Table " + tableName + "(" +
-                "Ono Char(12) Primary Key," +
-                "Odate Char(20)," +
+                "Ono Char(50) Primary Key," +
+                "Odate DateTime," +
                 "Sno Char(12),"+
-                "Uno Char(12), " +
+                "Uno Char(50), " +
+                "seat Char(50), " +
+                "price double, " +
                 " Foreign Key(Sno) References " +
                 SceneTable.sceneTableName + "(Sno)" +
                 //todo: order shouldn't be deleted, about money
@@ -53,16 +55,18 @@ public class OrderTable implements TableOperation {
      */
     @Override
     public boolean insert(Object o) {
-        String sql = "Insert Into " + tableName + " Values(?, ?, ?,?)";
+        String sql = "Insert Into " + tableName + " Values(?, ?, ?,?,?,?)";
         PreparedStatement pstmt = null;
         Order order = (Order) o;
         try {
             pstmt = MovieSystemDB.getConn().prepareStatement(sql);
 
             pstmt.setString(1, order.getOno());
-            pstmt.setString(2, order.getOdate());
+            pstmt.setString(2, order.getOdateTime());
             pstmt.setString(3, order.getSno());
             pstmt.setString(4, order.getUno());
+            pstmt.setString(5,order.getSeat());
+            pstmt.setDouble(6,order.getPrice());
 
             if (pstmt.executeUpdate() > 0) {
                 SimpleLogger.logger.info("insert " + order.showSelf()
@@ -107,9 +111,11 @@ public class OrderTable implements TableOperation {
                 Order order = new Order();
 
                 order.setOno(rs.getString("Ono"));
-                order.setOdate(rs.getString("Odate"));
+                order.setOdateTime(rs.getString("OdateTime"));
                 order.setSno(rs.getString("Sno"));
                 order.setUno(rs.getString("Uno"));
+                order.setSeat(rs.getString("seat"));
+                order.setPrice(rs.getDouble("price"));
 
                 SimpleLogger.logger.info("select " + order.showSelf() +
                         " from table '" + tableName + "'");
@@ -146,11 +152,11 @@ public class OrderTable implements TableOperation {
         Order order = (Order) o;
         //make sql statement
         //----------------------------------
-        if (order.getOdate() != null) {
+        if (order.getOdateTime() != null) {
             if (0 < count++) {
                 sql += ", ";
             }
-            sql += (" Odate = '" + order.getOdate() + "'");
+            sql += (" Odate = '" + order.getOdateTime() + "'");
         }
         if (order.getSno() != null) {
             if (0 < count++) {
@@ -163,6 +169,18 @@ public class OrderTable implements TableOperation {
                 sql += ", ";
             }
             sql += (" Uno = '" + order.getUno() + "'");
+        }
+        if (order.getSeat() != null) {
+            if (0 < count++) {
+                sql += ", ";
+            }
+            sql += (" seat = '" + order.getSeat() + "'");
+        }
+        if (order.getPrice() != 0) {
+            if (0 < count++) {
+                sql += ", ";
+            }
+            sql += (" price = " + order.getPrice() );
         }
         sql += " Where Ono = '" + order.getOno() + "'";
         //----------------------------------

@@ -12,16 +12,24 @@ import frontEnd.utils.ServletUtils;
 import logger.SimpleLogger;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.concurrent.LinkedBlockingQueue;
 
+@WebServlet(name = "Scenes", urlPatterns = {"/Scenes"})
 public class Scenes extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        ServletUtils.resJsonString(resp, JSON.toJSONString(""));
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         LinkedBlockingQueue<Pair4Filter> attr = new LinkedBlockingQueue<>();
         LinkedBlockingQueue<Scene> scenes = new LinkedBlockingQueue<>();
         try {
@@ -43,10 +51,5 @@ public class Scenes extends HttpServlet {
 
         ServletUtils.resJsonString(resp, JSON.toJSONString(scenes));
 
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        ServletUtils.resJsonString(resp, JSON.toJSONString(""));
     }
 }

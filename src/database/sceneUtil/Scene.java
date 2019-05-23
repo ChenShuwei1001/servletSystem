@@ -7,6 +7,8 @@ public class Scene implements ClassFunction {
     private String Mno;     //movie No.
     private String Tno;
     private String Tbrand;
+    private String beginTime;
+    private String endTime;
     private String language;
     private String roomType;
     private String roomName;
@@ -20,6 +22,8 @@ public class Scene implements ClassFunction {
         this.Mno = null;
         this.Tno = null;
         this.Tbrand = null;
+        beginTime = null;
+        endTime = null;
         this.language = null;
         this.roomType = null;
         this.roomName = null;
@@ -30,6 +34,7 @@ public class Scene implements ClassFunction {
     }
 
     public Scene(String Sno, String Mno, String Tno, String Tbrand,
+                 String beginTime, String endTime,
                  String language, String roomType, String roomName,
                  String location, String Sdate,
                  String seat, double price) {
@@ -38,6 +43,8 @@ public class Scene implements ClassFunction {
         this.Mno = Mno;
         this.Tno = Tno;
         this.Tbrand = Tbrand;
+        this.beginTime = beginTime;
+        this.endTime = endTime;
         this.language = language;
         this.roomType = roomType;
         this.roomName = roomName;
@@ -54,6 +61,8 @@ public class Scene implements ClassFunction {
                 this.Mno + ", " +
                 this.Tno + ", " +
                 this.Tbrand + ", " +
+                this.beginTime + ", " +
+                this.endTime +", "+
                 this.language + ", " +
                 this.roomType + ", " +
                 this.roomName + ", " +
@@ -149,5 +158,21 @@ public class Scene implements ClassFunction {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(String beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 }
