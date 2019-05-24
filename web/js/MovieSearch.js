@@ -2,18 +2,28 @@ window.onload=function (){
     debugger;
     check();
 
-    //设置新的搜索按钮点击事件
-    $("#movieSearchSubmit").click(function () {
-        debugger;
-        var str = $(".kw").val();
-        if(str===""){
-            alert("请在搜索框中输入搜索内容")
-        }else {
-            localStorage.setItem('searchMovie',"searchMovie="+str);
-            sendQuest(str);
+    $(".kw").bind('keypress',function (event) {
+        if(event.keyCode === 13) {
+            submitSearch();
         }
     });
+
+    //设置新的搜索按钮点击事件
+    $("#movieSearchSubmit").click(function () {
+        submitSearch();
+    });
 };
+
+function submitSearch() {
+    debugger;
+    var str = $(".kw").val();
+    if(str===""){
+        alert("请在搜索框中输入搜索内容")
+    }else {
+        localStorage.setItem('searchMovie',"searchMovie="+str);
+        sendQuest(str);
+    }
+}
 
 function check() {
     var form_data = localStorage.getItem('searchMovie');
@@ -50,12 +60,21 @@ function showSearchMovieList(data) {
     $("dd").each(function (i) {
         if(i!==0){
             $(this).remove();
+        }else {
+            if(data.length===0){
+                $(this).css('display','none')
+            }
         }
     });
 
-
     for(var i=1;i<data.length;i++){
         $("dl").append($("dd:last").clone());
+    }
+
+    if(data.length!==0){
+        $("dd").each(function () {
+            $(this).css('display','block')
+        });
     }
 
     $(".navbar a").text("影视剧（"+data.length+"）");
@@ -67,6 +86,10 @@ function showSearchMovieList(data) {
             var mno = $(event.target).attr("name");
             localStorage.setItem('key',mno);
         })
+    });
+
+    $(".movie-item a .movie-poster img").each(function (i) {
+        $(this).attr('name',data[i]["Mno"]);
     });
 
     $(".movie-item img").each(function (i) {

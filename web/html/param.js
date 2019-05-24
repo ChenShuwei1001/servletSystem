@@ -314,7 +314,7 @@ function showData(data){
             // "<td>"+data[i]["MposterPath"]+"</td>" +
             // "<td><img src=\"http://localhost:8080/servletSystem_war_exploded/image/abc.jpg\" alt=\"\"></td>" +
             // "<td><img src=\"image/abc.jpg\" alt=\"\"></td>" +
-            "<td><img src='/ImageUtil_Admin?path="+moviePosterPath+"' alt=''></td>" +
+            "<td style='text-align: center'><img src='/ImageUtil_Admin?path="+moviePosterPath+"' alt='' height='90px'></td>" +
             "<tr>" +
             "<td width='10'>"+data[i]["Mno"]+"</td>" +
             "<td >"+data[i]["Mname"]+"</td>" +

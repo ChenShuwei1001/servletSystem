@@ -14,7 +14,7 @@ import java.sql.Statement;
 
 public class OrderTable implements TableOperation {
     //order is a Reserved-Word in mysql, thus using 'orders' instead of using 'order'
-    private static final String tableName = "orders";
+    public static final String tableName = "orders";
 
     /**
      * create table with name @userTableName

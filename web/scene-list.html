@@ -17,6 +17,12 @@
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        span.x-right{
+            margin-left: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,12 +44,14 @@
         </div>
 
     </div>
-    <div class="layui-inline">
+
         <xblock>
+            <div class="layui-inline">
             <button class="layui-btn" onclick="x_admin_show('添加场次','./scene-add.html',600,600)"><i class="layui-icon"></i>添加场次</button>
             <span class="x-right" style="line-height:40px">共有数据：<label id="SceneNum" class="layui-icon"></label> 条</span>
+            </div>
         </xblock>
-    </div>
+
     <table class="layui-table" id="scene-table">
         <thead>
         <tr>
@@ -119,17 +127,17 @@
                 tempHtml += "<tr><td>" +
                     "              <div class=\"layui-unselect layui-form-checkbox\" lay-skin=\"primary\" data-id='2'><i class=\"layui-icon\">&#xe605;</i></div>\n" +
                     "            </td>"+
-                    "<td>"+data[i]["Sno"]+"</td>" +
-                    "<td>"+data[i]["Mno"]+"</td>" +
-                    "<td>"+data[i]["Tno"]+"</td>" +
-                    "<td>"+data[i]["Tbrand"]+"</td>" +
+                    "<td>"+data[i]["sno"]+"</td>" +
+                    "<td>"+data[i]["mno"]+"</td>" +
+                    "<td>"+data[i]["tno"]+"</td>" +
+                    "<td>"+data[i]["tbrand"]+"</td>" +
                     "<td>"+data[i]["beginTime"]+"</td>" +
                     "<td>"+data[i]["endTime"]+"</td>" +
                     "<td>"+data[i]["language"]+"</td>" +
                     "<td>"+data[i]["roomType"]+"</td>" +
                     "<td>"+data[i]["roomName"]+"</td>" +
                     "<td>"+data[i]["location"]+"</td>" +
-                    "<td>"+data[i]["Sdate"]+"</td>" +
+                    "<td>"+data[i]["sdate"]+"</td>" +
                     "<td>"+data[i]["seat"]+"</td>" +
                     "<td>"+data[i]["price"]+"</td>" +
                     "</tr>";

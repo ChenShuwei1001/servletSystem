@@ -13,7 +13,7 @@ import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
 
-@MultipartConfig(location = "F://")//测试路径
+@MultipartConfig(location = "D://")//测试路径
 public class Admin_alterInfo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
 
-@MultipartConfig(location = "F://")//测试路径
+@MultipartConfig(location = "D://")//测试路径
 public class Admin_addmovie extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,7 +34,7 @@ public class Admin_addmovie extends HttpServlet {
 //        String Path="F:\\myCode\\411movieSystemImage\\";
 //        String PathStemp = this.getClass().getClassLoader().getResource(".").getPath();
         //        F:\myCode\411movieSystem\servletSystem\web\image
-        String Path="F:/myCode/411movieSystemImage/";
+        String Path="D:/images/";
 
 
         Part result=  req.getPart("addMpo");

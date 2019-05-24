@@ -51,7 +51,7 @@ if(isLogin==null||isLogin!=="true"){
     })
 }
 
-$(".submit").click(function () {
+function submitInput(){
     debugger;
     if($('#search-film-my .search').val()===""){
         alert("请输入要搜索的电影名字")
@@ -61,4 +61,15 @@ $(".submit").click(function () {
         localStorage.setItem('searchMovie',form_data);
         window.location.href = "../pages/MovieSearch.html";
     }
+}
+
+$(".search").bind('keypress',function (event) {
+    debugger;
+    if(event.keyCode === 13) {
+        submitInput();
+    }
+});
+
+$(".submit").click(function () {
+    submitInput();
 });
