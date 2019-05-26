@@ -17,7 +17,7 @@ public class MovieSystemDB {
             "jdbc:mysql://localhost:3306/movieSystem" +
                     "?useSSL=false" +
                     "&useUnicode=true" +
-                    "&characterEncoding=UTF-8";
+                    "&characterEncoding=UTF-8&allowPublicKeyRetrieval=true";
 
     private static final String USER = "root";
     private static final String PSWD = "980425";

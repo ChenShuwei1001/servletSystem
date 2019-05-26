@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="addScene" action="/SceneModify" method="POST" >
+    场次号：<input class="sno" type="text" name="sno" readonly><br>
+    电影号：<input class="mno" type="text" name="mno"><br>
+    影院：<input class="tno" type="text" name="tno"><br>
+    影院品牌：<input class="tbrand" type="text" name="tbrand"><br>
+    开始时间：<input class="beginTime" type="time" name="beginTime"><br>
+    结束时间：<input class="endTime" type="time" name="endTime"><br>
+    语种：<input class="language" type="text" name="language"><br>
+    影厅种类：<input class="roomType" type="text" name="roomType"><br>
+    房间名：<input class="roomName" type="text" name="roomName"><br>
+    所在地区：<input class="location" type="text" name="location"><br>
+    日期：<input class="sdate" type="date" name="sdate"><br>
+    座位：<input class="seat" type="text" name="seat"><br>
+    价格：<input class="price" type="text" name="price"><br>
+    <input type="submit" value="提交">
+</form>
+
+
+</body>
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script src="http://malsup.github.io/min/jquery.form.min.js"></script>
+<script type="text/javascript" >
+    $(document).ready(function () {
+
+        debugger;
+        var sno=localStorage.getItem("sno");
+        var mno=localStorage.getItem("mno");
+        var tno=localStorage.getItem("tno");
+        var tbrand=localStorage.getItem("tbrand");
+        var beginTime=localStorage.getItem("beginTime");
+        var endTime=localStorage.getItem("endTime");
+        var language=localStorage.getItem("language");
+        var roomType=localStorage.getItem("roomType");
+        var roomName=localStorage.getItem("roomName");
+        var location=localStorage.getItem("location");
+        var sdate=localStorage.getItem("sdate");
+        var seat=localStorage.getItem("seat");
+        var price=localStorage.getItem("price");
+
+        // debugger;
+        $(".sno").attr("value",sno);
+        $(".mno").attr("value",mno);
+        $(".tno").attr("value",tno);
+        $(".tbrand").attr("value",tbrand);
+        $(".beginTime").attr("value",beginTime);
+        $(".endTime").attr("value",endTime);
+        $(".language").attr("value",language);
+        $(".roomName").attr("value",roomName);
+        $(".roomType").attr("value",roomType);
+        $(".location").attr("value",location);
+        $(".sdate").attr("value",sdate);
+        $(".seat").attr("value",seat);
+        $(".price").attr("value",price);
+
+    })
+
+
+
+    // $(".abc").attr("src","/ImageUtil_Admin?path="+path);
+
+
+
+</script>
+</html>
