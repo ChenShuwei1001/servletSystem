@@ -22,7 +22,7 @@ $(document).ready(function () {
                     "roomType": $("#roomType").val(),
                     "roomName": $("#roomName").val(),
                     "location": $("#location").val(),
-                    "Sdate": $("#location").val(),
+                    "Sdate": $("#Sdate").val(),
                     "Price": $("#Price").val()
                 },
                 dataType: "json",

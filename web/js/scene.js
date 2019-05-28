@@ -135,7 +135,7 @@ function modify( sno, mno, tno, tbrand, beginTime,endTime,language,
     localStorage.setItem("seat",seat);
     localStorage.setItem("price",price);
     debugger;
-    x_admin_show('更换海报','/scene-modify.html',600,400);
+    x_admin_show('修改信息','/scene-modify.html',600,400);
 }
 
 function deleteSceneItem(sno) {

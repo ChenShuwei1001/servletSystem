@@ -43,7 +43,7 @@ public class SelectMovies extends HttpServlet {
             if(count++>0){
                 sql +=" And ";
             }
-            sql += "Mtype = '" + hashMap.get("Mtype") + "' ";
+            sql += "Mtype lIKE '%" + hashMap.get("Mtype") + "%' ";
         }
         if("" != hashMap.get("Mlocation")){
             if(count++>0){

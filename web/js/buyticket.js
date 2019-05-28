@@ -42,14 +42,29 @@ function showMovieDetail(data) {
 
     $(".movie-brief-container #time").text(data["Mdate"]+"大陆上映");
 
-    $("#my-score").text(data["Mrating"]);
+    if(Math.ceil(data["Mrating"])===data["Mrating"]){
+        $("#my-score").text(data["Mrating"]+".0");
+    }else {
+        $("#my-score").text(data["Mrating"]);
+    }
+
     var num = data["MscoreNumber"];
     if(num>=10000){
         $("#score-num-my").text( Math.ceil(num/10000)+"万")
     }else
         $("#score-num-my").text(num);
 
-    $("#my-box-office").text(data["MboxOffice"]);
+    var box = data["MboxOffice"];
+    if(box>=100000000){
+        $("#my-box-office").text(Math.ceil(box/100000000));
+        $(".unit").text('亿')
+    }else if(box>=10000){
+        $("#my-box-office").text(Math.ceil(box/10000));
+        $(".unit").text('万')
+    }else {
+        $("#my-box-office").text(box);
+        $(".unit").text('元')
+    }
 }
 
 var time=0,pinpai=-1,xingzhengqu=-1,teshuting=-1,optionsData,Tno;
@@ -102,15 +117,31 @@ function sendTheaterListAjax(time,pinpai,xingzhengqu,teshuting,data) {
         }
     })
 }
+var text = "<div id=\"my-cinema-info\" class=\"my-cinema-infos\">\n" +
+    "                    <div class=\"cinema-info\">\n" +
+    "                        <a href=\"javascript:void(0)\" class=\"cinema-name\" id=\"my-cinema-name\"></a>\n" +
+    "                        <p class=\"cinema-address\" id=\"my-cinema-address\"></p>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "                    <div class=\"buy-btn\">\n" +
+    "                        <a href=\"./SelectTime.html\">选座购票</a>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "                    <div class=\"price\">\n" +
+    "                        <span class=\"rmb red\">￥</span>\n" +
+    "                        <span class=\"price-num red\"><span class=\"stonefont\">38</span></span>\n" +
+    "                        <span>起</span>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "                </div>";
 
 function showTheaterList(theaterlist) {
     $(".my-cinema-infos").each(function (i) {
-        if(i!==0){
             $(this).remove();
-        }
     });
-    for(var i=1,len=theaterlist.length;i<len;i++){
-        $("#my-cinema-cell").append($("#my-cinema-info").clone());
+
+    for(var i=0,len=theaterlist.length;i<len;i++){
+        $("#my-cinema-cell").append(text);
     }
     $(".cinema-info a").each(function (i) {
         $(this).text(theaterlist[i]["tname"]);

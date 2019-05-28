@@ -331,7 +331,7 @@ function showData(data){
             "<td >"+data[i]["Mdate"]+"</td>" +
             "<td >"+data[i]["Mrating"]+"</td>" +
             "<td >"+data[i]["MscoreNumber"]+"</td>" +
-            "<td >"+data[i]["Mintroduction"]+"</td></tr>"+
+            "<td style='max-width: 300px'>"+data[i]["Mintroduction"]+"</td></tr>"+
             "<td>" +
             "<button onclick=\"deleteMovieItem('"+Mnnno+"','"+moviePosterPath+"')\">删除</button>" +
             "<button id='alterbutton' onclick=\"alterInfo('"+moviePosterPath+"','"+Mnnno+"')\">修改海报</button>" +

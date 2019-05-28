@@ -33,14 +33,32 @@ function showMovieDetail(data) {
 
     $(".movie-brief-container #time").text(data["Mdate"]+"大陆上映");
 
-    $("#my-score").text(data["Mrating"]);
+    if(Math.ceil(data["Mrating"])===data["Mrating"]){
+        $("#my-score").text(data["Mrating"]+".0");
+    }else {
+        $("#my-score").text(data["Mrating"]);
+    }
+
+
     var num = data["MscoreNumber"];
     if(num>=10000){
         $("#score-num-my").text( Math.ceil(num/10000)+"万")
     }else
         $("#score-num-my").text(num);
 
-    $("#my-box-office").text(data["MboxOffice"]);
-    $(".dra").text(data[Mintroduction])
+    var box = data["MboxOffice"];
+    if(box>=100000000){
+        $("#my-box-office").text(Math.ceil(box/100000000));
+        $(".unit").text('亿')
+    }else if(box>=10000){
+        $("#my-box-office").text(Math.ceil(box/10000));
+        $(".unit").text('万')
+    }else {
+        $("#my-box-office").text(box);
+        $(".unit").text('元')
+    }
+
+
+    $(".dra").text(data["Mintroduction"])
 }
 

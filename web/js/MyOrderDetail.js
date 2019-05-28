@@ -31,6 +31,6 @@ function showDetailOrderMessage(data) {
 
     $(".showtime").text(data["beginDate"]+" "+data["beginTime"]);
 
-    $(".price").text(data["price"]);
+    $(".price").text(Math.ceil(data["price"]));
 
 }

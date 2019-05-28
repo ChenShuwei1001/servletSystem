@@ -112,7 +112,11 @@ function showSearchMovieList(data) {
     });
 
     $(".channel-detail-orange i").each(function (i) {
-        $(this).text(data[i]["Mrating"])
+        if(Math.ceil(data[i]["Mrating"])===data[i]["Mrating"]){
+            $(this).text(data[i]["Mrating"]+".0");
+        }else {
+            $(this).text(data[i]["Mrating"]);
+        }
     });
 
     $(".movie-item-cat").each(function (i) {

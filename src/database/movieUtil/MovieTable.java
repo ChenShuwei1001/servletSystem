@@ -240,19 +240,19 @@ public class MovieTable implements TableOperation {
             if (0 < count++) {
                 sql += ", ";
             }
-            sql += (" Mrating = '" + movie.getMrating() + "'");
+            sql += (" Mrating = " + movie.getMrating());
         }
         if (movie.getMscoreNumber() != 0) {
             if (0 < count++) {
                 sql += ", ";
             }
-            sql += (" MscoreNumber = " + movie.getMrating());
+            sql += (" MscoreNumber = " + movie.getMscoreNumber());
         }
         if (movie.getMintroduction() != null) {
             if (0 < count++) {
                 sql += ", ";
             }
-            sql += (" Mintroduction = '" + movie.getMrating() + "'");
+            sql += (" Mintroduction = '" + movie.getMintroduction() + "'");
         }
         sql += " Where Mno = '" + movie.getMno() + "'";
         //----------------------------------

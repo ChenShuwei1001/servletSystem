@@ -63,7 +63,13 @@ window.onload=function (){
 
 function showMovieDetail(data) {
     $(".movie-name").text(data["Mname"]);
-    $(".score").text(data["Mrating"]);
+
+    if(Math.ceil(data["Mrating"])===data["Mrating"]){
+        $(".score").text(data["Mrating"]+".0");
+    }else {
+        $(".score").text(data["Mrating"]);
+    }
+
     var times = data["Mduration"].split(":");
     var time = parseInt(times[0])*60+parseInt(times[1]);
     $("#my-movie-time-value").text(time+"分钟");

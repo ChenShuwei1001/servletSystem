@@ -1,7 +1,14 @@
 window.onload=function (){
+    var firstUrl="/MovieOptions?";
+
+    firstUrl+="Mtype=";
+    firstUrl+="&Mlocation=";
+    firstUrl+="&Mlanguage=";
+
+
     $.ajax({
         type:"GET",
-        url:"/MovieOptions",
+        url:firstUrl,
         contentType:"charset=utf-8",
         success:function (data) {
             debugger;
@@ -17,15 +24,32 @@ window.onload=function (){
 var MovieType=0,MovieLocation=0,MovieTime=0,MovieOptionData;
 function showMovieListOptions(data) {
     MovieOptionData=data;
+
+    var typeSet = handleData(data[0]);
+    debugger;
+    var typeSetArray = Array.from(typeSet);
+    MovieOptionData[0]=typeSetArray;
     
-    showMovieType(data[0]);
+    showMovieType(typeSetArray);
     showMovieLocation(data[1]);
     showMovieTime(data[2]);
 
     //0,0,0代表将“全部”设置为active
     setMovieListOptionActive(0,0,0);
 
-    sendMovieListByOptionAjax(0,0,0,data);
+    sendMovieListByOptionAjax(-1,-1,-1);
+}
+
+function handleData(data) {
+    debugger;
+    var typeSet = new Set();
+    for(var i=0;i<data.length;i++){
+        res = data[i].split(",");
+        for(var j=0;j<res.length;j++){
+            typeSet.add(res[j])
+        }
+    }
+    return typeSet;
 }
 
 function showMovieType(data) {
@@ -109,12 +133,13 @@ function setMovieListOptionActive(a,b,c) {
 }
 
 function sendMovieListByOptionAjax(MovieType, MovieLocation, MovieTime) {
+    debugger;
     var url = "/SelectMovies?";
 
     if(MovieType===-1){
-        url+="&Mtype=";
+        url+="Mtype=";
     }else {
-        url+="&Mtype="+MovieOptionData[0][MovieType];
+        url+="Mtype="+MovieOptionData[0][MovieType];
     }
     if(MovieLocation===-1){
         url+="&Mlocation=";
@@ -132,6 +157,7 @@ function sendMovieListByOptionAjax(MovieType, MovieLocation, MovieTime) {
         contentType:"charset=utf-8",
         success:function (data) {
             console.log(data);
+            debugger;
             showMovieList(data)
         },
         error:function () {
@@ -142,14 +168,29 @@ function sendMovieListByOptionAjax(MovieType, MovieLocation, MovieTime) {
 
 function showMovieList(data) {
     $(".movie-list li").each(function (i) {
-        if(i!==0){
             $(this).remove();
-        }
     });
 
+    var text = "<li>\n" +
+        "                            <div class=\"movie-item\">\n" +
+        "                                <a href=\"./MovieDetail.html\" target=\"_blank\" data-act=\"movie-click\" data-val=\"{movieid:1208282}\">\n" +
+        "                                    <div class=\"movie-poster\">\n" +
+        "\n" +
+        "                                        <img style=\"width: 160px;height: 220px;\" src=\"\">\n" +
+        "                                    </div>\n" +
+        "                                </a>\n" +
+        "                            </div>\n" +
+        "                            <div class=\"channel-detail movie-item-title\" title=\"${u.name }\">\n" +
+        "                                <a href=\"./MovieDetail.html\" >${u.name }</a>\n" +
+        "                            </div>\n" +
+        "\n" +
+        "                            <div class=\"channel-detail channel-detail-orange\"><i class=\"integer\">${u.score}</i>\n" +
+        "                            </div>\n" +
+        "                        </li>";
 
-    for(var i=1;i<data.length;i++){
-        $(".movie-list").append($(".movie-list li:last").clone());
+
+    for(var i=0;i<data.length;i++){
+        $(".movie-list").append(text);
     }
     $(".movie-list li .movie-item img").each(function (i) {
         $(this).attr('src',"/image?path="+data[i]["MposterPath"]);
@@ -161,7 +202,11 @@ function showMovieList(data) {
         })
     });
     $(".movie-list li .channel-detail-orange i").each(function (i) {
-        $(this).text(data[i]["Mrating"]);
+        if(Math.ceil(data[i]["Mrating"])===data[i]["Mrating"]){
+            $(this).text(data[i]["Mrating"]+".0");
+        }else {
+            $(this).text(data[i]["Mrating"]);
+        }
     });
 
     $(".movie-list li .movie-item a").each(function (i) {

@@ -49,12 +49,20 @@ public class Admin_alterInfo extends HttpServlet {
         String moviePath=req.getParameter("addMpo");//旧路径
         //修改名字的同时修改路径 重新保存海报
         //修改路径
-        String Path="F:/myCode/411movieSystemImage/";
-        String NewmoviePath=Path+addMno+addMname+".jpg";//新路径
-        movieUpdate.setMposterPath(NewmoviePath);
-        File oldname=new File(moviePath);
-        File newname=new File(NewmoviePath);
-        oldname.renameTo(newname);
+        String [] res= moviePath.split("/");
+        String last = res[res.length-1];
+        String [] old_name_res = last.split(addMno);
+        String old_name = old_name_res[0];
+        if(old_name.equals(addMname)){
+            movieUpdate.setMposterPath(moviePath);
+        }else{
+            String Path="D:/images/";
+            String NewmoviePath=Path+addMno+addMname+".jpg";//新路径
+            movieUpdate.setMposterPath(NewmoviePath);
+            File oldname=new File(moviePath);
+            File newname=new File(NewmoviePath);
+            oldname.renameTo(newname);
+        }
 
         String addMoD=req.getParameter("addMoD");
         movieUpdate.setDirector(addMoD);

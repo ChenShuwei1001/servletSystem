@@ -52,8 +52,11 @@ function MovieList(data) {
         }
     }
     $("#movie-item-hot-play1 #movie-rate").each(function (i) {
-        var rate = data[i]["Mrating"];
-        $(this).text(rate);
+        if(Math.ceil(data[i]["Mrating"])===data[i]["Mrating"]){
+            $(this).text(data[i]["Mrating"]+".0");
+        }else {
+            $("#my-score").text(data[i]["Mrating"]);
+        }
     });
     $("#movie-item-hot-play1 #movie-name").each(function (i) {
         var name = data[i]["Mname"];
