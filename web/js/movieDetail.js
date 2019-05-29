@@ -59,6 +59,14 @@ function showMovieDetail(data) {
     }
 
 
-    $(".dra").text(data["Mintroduction"])
+    $(".dra").each(function (i) {
+        if(i===0){
+            $(this).text(data["Mintroduction"])
+        }else if(i===1){
+            $(this).text(data["Mdirector"])
+        }else if(i===2){
+            $(this).text(data["actor"])
+        }
+    });
 }
 
