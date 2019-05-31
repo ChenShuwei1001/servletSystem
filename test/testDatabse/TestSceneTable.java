@@ -9,14 +9,15 @@ public class TestSceneTable {
         MovieSystemDB.DBinit();
         SceneTable sceneTable = MovieSystemDB.getSceneTable();
         //test insert
-//        Scene scene = new Scene("1", "1", "1", "IMAX",
-//                "10:40:00", "13:00:00",
-//                "英语", "3D厅","2号厅",
-//                "郫都区",
-//                "2018-04-24", "A1,B2,C3", 50);
-//        sceneTable.insert(scene);
-//        scene.setSno("2");
-//        sceneTable.insert(scene);
+        Scene scene = new Scene("10", "9", "4", "金球影院",
+                "08:20:00", "11:00:00",
+                "英语", "3D厅","2号厅",
+                "郫都区",
+                "2018-05-24", "A1,B2,C3", 50);
+        sceneTable.insert(scene);
+        scene.setSno("11");
+        scene.setMno("10");
+        sceneTable.insert(scene);
 //        scene.setSno("3");
 //        sceneTable.insert(scene);
 //        scene.setSno("4");

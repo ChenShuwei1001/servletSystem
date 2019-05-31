@@ -10,7 +10,7 @@ window.onload=function (){
 
     $.ajax({
         type:"GET",
-        url:"/TheaterDetail?Tno="+key,
+        url:"/TheaterDetail?Tno="+tno,
         contentType:"charset=utf-8",
         success:function (data) {
             showTheater(data)
